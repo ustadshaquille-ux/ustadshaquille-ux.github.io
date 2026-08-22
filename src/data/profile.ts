@@ -9,7 +9,7 @@ import type { Profile } from "../types";
 
 export const profile: Profile = {
   eyebrow: "Programmer × Capital Market",
-  name: "M Shaquille Mutaqi",
+  name: "Muhammad Shaquille Muttaqi",
   title: "Capital Market Data & Analytics · Python",
   tagline:
     "Menganalisa pasar modal Indonesia dengan cara membangun sendiri alat analisanya.",
@@ -21,7 +21,7 @@ export const profile: Profile = {
   // Foto formal diambil dari CV. Ganti file di public/profile.png,
   // atau arahkan ke file lain di sini.
   photo: "/profile.png",
-  photoAlt: "M Shaquille Mutaqi berdiri mengenakan jas hitam",
+  photoAlt: "Muhammad Shaquille Muttaqi berdiri mengenakan jas hitam",
 
   // Foto hero: PNG dengan latar SUDAH DIHAPUS, supaya sosoknya
   // berdiri di depan tulisan raksasa. Simpan di public/, lalu ganti

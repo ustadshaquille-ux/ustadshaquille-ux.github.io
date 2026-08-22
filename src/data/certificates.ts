@@ -1,34 +1,24 @@
 import type { Certificate } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
-   CERTIFICATES & ACHIEVEMENTS
-   Gambar sertifikat ditaruh di public/certificates/ lalu ditulis
-   path-nya di bawah. Klik kartu membuka gambar ukuran penuh.
+   CERTIFICATES
+   Isi kartu ditulis PERSIS seperti yang tercetak di sertifikatnya,
+   termasuk nama perusahaan dan tanggalnya. Sertifikat adalah dokumen
+   yang bisa diverifikasi; menuliskannya berbeda dari aslinya justru
+   melemahkan seluruh isi halaman.
+
+   Gambar ditaruh di public/certificates/, klik kartu membuka ukuran
+   penuh. Entri "[ADD ...]" dirender sebagai kartu putus-putus.
    ══════════════════════════════════════════════════════════════════ */
 
 export const certificates: Certificate[] = [
   {
-    title: "Sertifikat Magang Kerja",
+    title: "Internship Certificate",
     issuer: "PT Tijari Total Solusi",
-    date: "1 Desember 2025 — 27 Februari 2026",
+    date: "1 December 2025 — 27 February 2026",
     image: "/certificates/tijari-internship.png",
     href: "/certificates/tijari-internship.png",
-    description: "Menyelesaikan program magang kerja sebagai mahasiswa Universitas Budi Luhur.",
-  },
-  {
-    title: "[ADD CERTIFICATE NAME]",
-    issuer: "[ADD ISSUER]",
-    date: "[ADD DATE]",
-    image: "[ADD IMAGE]",
-    href: "[ADD LINK]",
-    description: "[ADD SHORT DESCRIPTION]",
-  },
-  {
-    title: "[ADD CERTIFICATE NAME]",
-    issuer: "[ADD ISSUER]",
-    date: "[ADD DATE]",
-    image: "[ADD IMAGE]",
-    href: "[ADD LINK]",
-    description: "[ADD SHORT DESCRIPTION]",
+    description:
+      "Completed a work internship as a student of Universitas Budi Luhur.",
   },
 ];
