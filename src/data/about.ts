@@ -1,25 +1,30 @@
 import type { AboutContent } from "../types";
 
-/* ══ ABOUT — 2-4 kalimat. Tahan godaan menambah paragraf. ══════════ */
+/* ══════════════════════════════════════════════════════════════════
+   ABOUT
+   Isinya sengaja sama persis dengan ringkasan di CV. Perekrut sering
+   membuka keduanya berurutan, dan dua versi cerita yang berbeda
+   membuat keduanya terasa kurang dapat dipercaya.
+   ══════════════════════════════════════════════════════════════════ */
 
 export const about: AboutContent = {
   paragraphs: [
-    "Mahasiswa Computer Science Universitas Budi Luhur yang memusatkan seluruh kerjanya pada satu hal: memakai pemrograman, data, dan otomasi untuk pasar modal Indonesia.",
-    "Saya tidak berhenti di memakai alat analisa — saya membangunnya. Mulai dari pipeline pengumpul data harian 958 saham, mesin validasi yang menolak data cacat, analisa order flow per level harga, riset sektor, sampai backtesting dengan biaya transaksi sebenarnya.",
-    "Prinsip kerjanya satu: angka yang tidak bisa dipertanggungjawabkan lebih berbahaya daripada tidak ada angka. Karena itu setiap keluaran punya test, setiap batasan ditulis terbuka, dan \"belum cukup bukti\" adalah jawaban yang sah.",
+    "Computer Science student at Universitas Budi Luhur with a strong interest in data and capital markets, especially market data analysis, data quality engineering, and full-stack development.",
+    "Experienced in building systems end to end, from data pipelines and validation layers to statistical engines and web applications, through independent projects and IT internships in media and technology consulting.",
+    "I'm the type of person who builds my own route to a solution rather than waiting for one to exist, and confident taking on work I've never touched before. I'll say I don't know when I don't know. I'm just not the type to say it twice.",
   ],
   pillars: [
     {
-      icon: "code",
+      icon: "chart",
       accent: "tech",
-      title: "Sisi Teknologi",
-      body: "Desain pipeline ETL, web scraping & otomasi, arsitektur aplikasi desktop, optimasi performa, dan disiplin automated testing sebagai syarat rilis — bukan pelengkap.",
+      title: "What I analyse",
+      body: "Order flow and broker activity, fund flow, price-level footprint, sector rotation and seasonality, plus company valuation from the financial statements up.",
     },
     {
-      icon: "chart",
+      icon: "code",
       accent: "market",
-      title: "Sisi Pasar Modal",
-      body: "Broker summary & order flow, aliran dana asing/institusi/lokal, footprint per level harga, rotasi sektor, tick size, ARA/ARB, dan struktur biaya transaksi nyata.",
+      title: "What I build",
+      body: "The tools that produce those answers: collection pipelines, validation layers, statistical engines, desktop applications, and web platforms.",
     },
   ],
 };

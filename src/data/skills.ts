@@ -15,7 +15,7 @@ export const technicalSkills: SkillGroup[] = [
     icon: "chart",
     items: [
       "Broker Summary & Order Flow",
-      "Aliran Dana Asing / Institusi / Lokal",
+      "Foreign / Institutional / Local Fund Flow",
       "Price-level Footprint",
       "Sector Rotation",
       "Seasonality Testing",
@@ -34,16 +34,29 @@ export const technicalSkills: SkillGroup[] = [
     ],
   },
   {
-    title: "Quantitative Methods",
+    title: "Quantitative Analysis",
     accent: "neutral",
     icon: "spark",
     items: [
-      "Regression (beta, alpha, R-squared)",
-      "Correlation & Residual Analysis",
+      "Regression Analysis",
+      "Correlation & Lead-lag Analysis",
       "Statistical Significance Testing",
+      "Multiple-Comparison Correction",
       "Backtesting",
-      "Out-of-sample Validation",
-      "Walk-forward Split",
+      "Out-of-Sample Validation",
+    ],
+  },
+  {
+    title: "Fundamental Valuation",
+    accent: "market",
+    icon: "chart",
+    items: [
+      "ROIC vs Cost of Capital",
+      "Reverse DCF",
+      "Residual Income & Owner Earnings",
+      "DuPont Decomposition",
+      "Earnings Quality & Accrual Analysis",
+      "Scenario Modelling",
     ],
   },
   {
@@ -53,51 +66,51 @@ export const technicalSkills: SkillGroup[] = [
     items: [
       "ETL Pipeline Design",
       "Data Validation & Quality Scoring",
+      "Data Leakage Prevention",
       "Web Scraping & Automation",
       "Automated Testing",
       "Performance Optimisation",
-      "Point-in-time / Leakage Audit",
     ],
   },
   {
-    title: "Tools & Stack",
+    title: "Tools",
     accent: "tech",
     icon: "code",
     wide: true,
     items: [
-      "Python (advanced)",
-      "SQL",
-      "Git",
-      "Selenium",
-      "Tkinter",
+      "Advanced Python",
       "TypeScript",
+      "JavaScript",
+      "SQL & PostgreSQL",
       "React",
       "Next.js",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "Microsoft Office / Excel",
+      "Git & CI/CD",
+      "Selenium",
+      "AI-Assisted Development",
+      "Microsoft Office",
     ],
   },
 ];
 
+/* Delapan saja, sama dengan CV. Daftar yang lebih panjang justru
+   melemahkan: makin banyak yang diklaim, makin sedikit yang dipercaya. */
 export const softSkills: SkillGroup = {
   title: "Soft Skills",
   accent: "neutral",
   icon: "shield",
   items: [
     "Analytical Thinking",
-    "Ketelitian pada Angka",
-    "Riset Mandiri",
     "Problem Solving",
-    "Dokumentasi Teknis",
-    "Jujur soal Batasan Data",
-    "Komunikasi Temuan",
-    "Manajemen Waktu",
+    "Detail Oriented",
+    "Root-Cause Analysis",
+    "Evidence-Based Decision Making",
+    "Technical Writing",
+    "Team Collaboration",
+    "Adaptability",
   ],
-  note: "Kalau ada soft skill yang ingin ditambah/dikurangi, edit array ini saja.",
 };
 
 export const languages: { name: string; level: string }[] = [
-  { name: "Bahasa Indonesia", level: "Advanced" },
+  { name: "Indonesian", level: "Native" },
   { name: "English", level: "Advanced" },
 ];

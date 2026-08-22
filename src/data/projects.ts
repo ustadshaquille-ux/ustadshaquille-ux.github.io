@@ -2,198 +2,103 @@ import type { Project, ProjectCategory } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
    PROJECTS
-   Setiap project punya: kicker, judul, ringkasan 1-2 kalimat,
-   kategori (untuk filter), tech stack, 2-3 angka penting, sampul,
-   dan link.
+   Empat saja, sama persis dengan bagian Selected Projects di CV.
 
-   MENAMBAH PROJECT: salin satu blok, ganti `id` jadi unik, taruh di
-   urutan yang Anda mau. Tidak ada file lain yang perlu diubah.
+   Sebelumnya berkas ini memuat sembilan entri, dan itu justru
+   melemahkan: sembilan judul membuat pembaca memindai sekilas lalu
+   tidak mengingat satu pun. Empat memberi ruang bagi tiap proyek
+   untuk benar-benar dibaca.
 
-   GAMBAR: taruh file di public/projects/nama.png lalu tulis
-   image: "/projects/nama.png". Selama masih "[ADD IMAGE]", sistem
-   menggambar sampul abstrak sendiri (murni grafis, bukan data) dan
-   menandainya sebagai placeholder.
+   Tautan sengaja dibiarkan "[ADD ...]" supaya dirender sebagai chip
+   putus-putus, bukan link rusak. Isi sendiri saat sudah siap.
    ══════════════════════════════════════════════════════════════════ */
-
-export const projectFilters: ("All" | ProjectCategory)[] = [
-  "All",
-  "Programming",
-  "Finance",
-  "Capital Market",
-  "Data",
-  "Hybrid",
-];
 
 export const projects: Project[] = [
   {
-    id: "blumberg-terminal",
-    kicker: "Research Terminal",
-    title: "BLUMBERG TERMINAL",
+    id: "market-research-terminal",
+    kicker: "Capital Market Research",
+    title: "Market Research Terminal & Quantitative Data Engine",
     summary:
-      "Terminal riset saham dengan navigasi dua lapis MACRO/MICRO: musiman sektor, regresi terhadap IHSG, aliran dana per kelompok broker, footprint per level harga, dan screener ber-backtest.",
-    categories: ["Hybrid", "Capital Market", "Data", "Programming"],
-    tech: ["Python", "Tkinter", "Standard Library Only", "Pickle Cache", "unittest"],
+      "A complete capital market research ecosystem in Python: automated data pipelines, a data validation library, and desktop applications for analysing market and broker activity.",
+    categories: ["Hybrid", "Capital Market", "Data"],
+    tech: ["Python", "Standard Library Only", "Tkinter", "unittest", "Selenium"],
     highlights: [
-      { value: "13.654", label: "baris satu aplikasi" },
-      { value: "759", label: "test lulus" },
-      { value: "7", label: "tab riset" },
+      { value: "20 yr", label: "market history covered" },
+      { value: "40s → 0.35s", label: "load time after caching" },
+      { value: "1,383", label: "automated tests passing" },
     ],
     image: "[ADD IMAGE]",
-    status: "Berjalan, dites otomatis",
+    status: "Running, covered by automated tests",
     featured: true,
     links: [
       { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
-      { label: "Demo", href: "[ADD DEMO LINK]", icon: "external" },
     ],
   },
   {
-    id: "saham-analyst",
-    kicker: "Desktop Analytics App",
-    title: "SAHAM ANALYST",
+    id: "equity-terminal",
+    kicker: "Fundamental Analysis",
+    title: "Equity Terminal",
     summary:
-      "Aplikasi bedah satu saham dari segala sisi: chart candle sejajar kolom dengan heatmap 10 indikator volume dan frekuensi, heatmap broker, screener pasar, serta analisa running trade per detik.",
-    categories: ["Hybrid", "Capital Market", "Programming"],
-    tech: ["Python", "Tkinter", "Custom Canvas Chart", "unittest", "Headless UI Test"],
+      "A browser-based tool that turns raw financial statement data into a structured investment thesis, covering profitability, valuation, credit risk, and scenario analysis. It measures each company against its own history rather than fixed industry thresholds.",
+    categories: ["Finance", "Capital Market", "Programming"],
+    tech: ["JavaScript", "Zero Dependencies", "Single-file Build"],
     highlights: [
-      { value: "331", label: "test lulus" },
-      { value: "10", label: "indikator proprietary" },
-      { value: "3", label: "tab-dalam-tab" },
+      { value: "70+", label: "financial fields parsed" },
+      { value: "0", label: "external dependencies" },
     ],
     image: "[ADD IMAGE]",
-    status: "Selesai, dipakai harian",
+    status: "Live in the browser",
     featured: true,
     links: [
+      { label: "Open", href: "[ADD DEMO LINK]", icon: "external" },
       { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
-      { label: "Demo", href: "[ADD DEMO LINK]", icon: "external" },
     ],
   },
   {
-    id: "quant-engine",
-    kicker: "Data Integrity Engine",
-    title: "Quant Engine — Validation & Leakage Firewall",
+    id: "tbagsbook",
+    kicker: "Full-Stack Platform",
+    title: "TBAGSBOOK — Digital Reading Platform",
     summary:
-      "Mesin yang memutuskan apakah data layak dipakai sebelum satu model pun dilatih: konsistensi OHLC, batas auto-rejection ARA/ARB, deteksi outlier, quality scoring, dan audit point-in-time terhadap kebocoran data masa depan.",
-    categories: ["Data", "Finance", "Programming"],
-    tech: ["Python", "Walk-forward Design", "Golden Dataset", "unittest"],
+      "A reading platform serving books and comics with a library, commenting, and a gamified rewards system. The security layer is built end to end: Google sign-in, mandatory two-factor authentication, server-side session control, and abuse rate limiting.",
+    categories: ["Programming", "Data"],
+    tech: ["Node.js", "Express", "PostgreSQL", "OAuth 2.0", "TOTP", "Cloudinary"],
     highlights: [
-      { value: "176", label: "test lulus" },
-      { value: "24", label: "kode masalah berseverity" },
-      { value: "0", label: "toleransi look-ahead" },
+      { value: "2FA", label: "required, not optional" },
+      { value: "Live", label: "deployed and in use" },
     ],
     image: "[ADD IMAGE]",
-    status: "Phase 1 selesai",
+    status: "Deployed and running",
     featured: true,
     links: [
+      { label: "Open", href: "[ADD DEMO LINK]", icon: "external" },
       { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
-      { label: "Dokumentasi", href: "[ADD DOCS LINK]", icon: "external" },
     ],
-  },
-  {
-    id: "market-data-pipeline",
-    kicker: "ETL & Automation",
-    title: "IDX Market Data Pipeline",
-    summary:
-      "Pengumpul data harian otomatis: OHLCV 958 saham plus IHSG, dan broker summary 101 anggota bursa hasil scraping. Deteksi tanggal bolong, cache inkremental, dan laporan cakupan agar file yang hilang tidak pernah terbaca sebagai hari sepi.",
-    categories: ["Data", "Programming"],
-    tech: ["Python", "Selenium", "yfinance", "Tkinter", "Incremental Cache"],
-    highlights: [
-      { value: "2,6 jt", label: "price bar terarsip" },
-      { value: "4.913", label: "hari bursa" },
-      { value: "7", label: "broker hilang ditemukan" },
-    ],
-    image: "[ADD IMAGE]",
-    status: "Berjalan harian",
-    links: [{ label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" }],
-  },
-  {
-    id: "fund-flow",
-    kicker: "Order Flow Research",
-    title: "Fund Flow — Asing / Institusi / Lokal",
-    summary:
-      "Mengukur net beli-jual seluruh pasar per kelompok broker dari broker summary, lalu menguji apakah aliran itu mendahului IHSG sesi berikutnya. Hasilnya dilaporkan inconclusive, bukan dipaksa menjadi sinyal.",
-    categories: ["Capital Market", "Finance", "Data"],
-    tech: ["Python", "Lead-lag Testing", "Coverage Reporting"],
-    highlights: [
-      { value: "101", label: "broker diklasifikasi" },
-      { value: "3", label: "kelompok: asing/BUMN/lokal" },
-      { value: "= 0", label: "invarian zero-sum dijaga" },
-    ],
-    image: "[ADD IMAGE]",
-    status: "Berjalan, temuan dilaporkan apa adanya",
-    links: [
-      { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
-      { label: "Catatan Riset", href: "[ADD LINK]", icon: "external" },
-    ],
-  },
-  {
-    id: "sector-research",
-    kicker: "Macro Research",
-    title: "Sector Research & Seasonality Engine",
-    summary:
-      "Menyusun indeks sektor dari bobot jumlah saham beredar, lalu meregresikannya terhadap IHSG: beta, alpha, R-squared, dengan sensitivitas naik dan turun dipisah. Uji musiman bulanan dan kuartalan melaporkan median serta hit rate di samping rata-rata.",
-    categories: ["Capital Market", "Finance", "Data"],
-    tech: ["Python", "OLS Regression", "Multiple-comparison Correction"],
-    highlights: [
-      { value: "11", label: "sektor IDX + IHSG" },
-      { value: "β·α·R²", label: "regresi per sektor" },
-      { value: "20 th", label: "musiman diuji" },
-    ],
-    image: "[ADD IMAGE]",
-    status: "Berjalan, batasan data ditulis terbuka",
-    links: [{ label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" }],
-  },
-  {
-    id: "screener-backtest",
-    kicker: "Strategy Validation",
-    title: "Stock Screener & Backtesting Engine",
-    summary:
-      "Menyaring seluruh pasar lewat aktivitas broker dan sepuluh indikator volume/frekuensi yang dinormalisasi terhadap sejarah saham itu sendiri, lalu diuji dengan biaya nyata: beli 0,15%, jual 0,25%, plus slippage satu tick.",
-    categories: ["Capital Market", "Finance", "Programming"],
-    tech: ["Python", "Walk-forward Split", "Percentile Ranking", "TP/SL/Max-hold"],
-    highlights: [
-      { value: "0,8-1%", label: "biaya minimum break even" },
-      { value: "10", label: "indikator ternormalisasi" },
-      { value: "2", label: "rezim: naik & turun" },
-    ],
-    image: "[ADD IMAGE]",
-    status: "Berjalan",
-    links: [{ label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" }],
-  },
-  {
-    id: "running-trade-sniper",
-    kicker: "Real-time Monitoring",
-    title: "Running Trade Sniper",
-    summary:
-      "Pemantau tick real-time yang menjalankan logika deteksi untuk 500+ saham di background, menampilkan 50 yang paling ramai, dengan bahasa filter buatan sendiri dan notifikasi Telegram saat kondisi terpenuhi.",
-    categories: ["Capital Market", "Programming"],
-    tech: ["Python", "Selenium", "Threading", "Custom Filter DSL", "Telegram Bot API"],
-    highlights: [
-      { value: "500+", label: "saham dipantau paralel" },
-      { value: "1/detik", label: "throttle evaluasi filter" },
-      { value: "6.304", label: "baris" },
-    ],
-    image: "[ADD IMAGE]",
-    status: "Berjalan saat jam bursa",
-    links: [{ label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" }],
   },
   {
     id: "atlas-concierge",
-    kicker: "Full-stack Web",
+    kicker: "AI Product",
     title: "ATLAS — AI Travel Concierge",
     summary:
-      "Platform perjalanan dua wajah, marketplace dan concierge AI, di atas satu mesin. Harga selalu dihitung ulang di server dan tidak pernah dipercayakan pada keluaran model; tanpa API key pun sistem tetap jalan penuh lewat mesin aturan.",
-    categories: ["Programming"],
-    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "PostgreSQL", "Gemini API"],
+      "A full-stack booking application with a database, payment flow, and AI-assisted natural language search. Pricing is always recomputed on the server, so the language model never becomes a source of numbers.",
+    categories: ["Programming", "Data"],
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Gemini API", "Tailwind CSS"],
     highlights: [
-      { value: "125", label: "produk katalog" },
-      { value: "29.000", label: "jadwal 60 hari" },
-      { value: "0", label: "harga dari model AI" },
+      { value: "11", label: "product documents written" },
+      { value: "B2B", label: "reframed from B2C" },
     ],
     image: "[ADD IMAGE]",
-    status: "Prototipe, inventaris & pembayaran simulasi",
+    status: "Prototype, runs locally",
+    featured: true,
     links: [
       { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
-      { label: "Demo", href: "[ADD DEMO LINK]", icon: "external" },
     ],
   },
 ];
+
+/* Penyaring di atas daftar. "All" selalu pertama; sisanya hanya
+   kategori yang benar-benar dipakai, supaya tidak ada tombol yang
+   ditekan lalu menghasilkan daftar kosong. */
+export const projectFilters: readonly ("All" | ProjectCategory)[] = [
+  "All",
+  ...(Array.from(new Set(projects.flatMap((p) => p.categories))) as ProjectCategory[]),
+] as const;

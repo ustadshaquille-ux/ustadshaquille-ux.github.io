@@ -1,58 +1,74 @@
 import type { ExperienceItem } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
-   EXPERIENCE — urut dari yang paling baru.
-   Maksimal 3-4 poin per entri, satu baris masing-masing. Recruiter
+   EXPERIENCE
+   Urut dari yang paling baru, dan isinya sama persis dengan CV.
+   Maksimal dua poin per entri, satu baris masing-masing — perekrut
    memindai, tidak membaca.
+
+   Catatan: data lama di berkas ini menulis "PT Tijari Total Solusi,
+   Des 2025 - Feb 2026". CV menulis "PT Tijari Teknologi Automasi,
+   Mar - Mei 2026". Yang dipakai adalah versi CV. Bila justru yang
+   lama yang benar, perbaiki di kedua tempat sekaligus supaya tidak
+   ada dua versi yang beredar.
    ══════════════════════════════════════════════════════════════════ */
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Independent Developer — Capital Market Analytics",
-    org: "Proyek mandiri",
-    period: "2025 — sekarang",
+    role: "IT Support Intern",
+    org: "Media Group (METRO TV)",
+    period: "Mar 2026 — Aug 2026",
     location: "Jakarta, Indonesia",
-    kind: "independent",
-    points: [
-      "Membangun tiga aplikasi analisa pasar modal dari nol: pengumpul data, aplikasi analisa saham, dan terminal riset makro-mikro.",
-      "Mengarsipkan 20 tahun data IDX — 958 saham, 2,6 juta price bar, 4.913 hari bursa — beserta broker summary 101 anggota bursa.",
-      "Menegakkan mutu lewat 1.266 automated test yang harus lulus sebelum perubahan apa pun dianggap selesai.",
-    ],
-    tags: ["Python", "Selenium", "Tkinter", "Data Engineering", "Backtesting"],
-  },
-  {
-    role: "Internship",
-    org: "PT Tijari Total Solusi",
-    period: "1 Desember 2025 — 27 Februari 2026",
-    location: "[ADD LOCATION]",
     kind: "internship",
     points: [
-      "[ADD JOB DESCRIPTION — isi 2-3 poin tentang apa yang Anda kerjakan di sini]",
-    ],
-    tags: ["[ADD TAGS]"],
-  },
-  {
-    role: "IT Support",
-    org: "Media Group (METRO TV)",
-    period: "[ADD PERIOD]",
-    location: "Jakarta, Indonesia",
-    kind: "work",
-    points: [
-      "Troubleshooting, perbaikan, dan perawatan komputer serta perangkat IT di berbagai divisi — menangani isu hardware maupun software agar downtime tetap minimum.",
-      "Membantu perawatan dasar dan troubleshooting server di server room.",
-      "Menangani masalah WLAN dan pengkabelan jaringan: pengecekan, penyambungan ulang, dan perbaikan kabel yang mengganggu konektivitas antar workstation.",
+      "Handled day-to-day IT support for staff across several divisions, fixing hardware and software problems, swapping out equipment and running routine checks so machines stayed usable.",
+      "Did basic maintenance in the server room, and traced WLAN and cabling faults whenever workstations lost their connection.",
     ],
     tags: ["IT Support", "Networking", "Server Maintenance", "Hardware"],
   },
   {
-    role: "S1 Computer Science — sedang berjalan",
+    role: "IT Consultant Intern",
+    org: "PT Tijari Teknologi Automasi",
+    period: "Mar 2026 — May 2026",
+    location: "South Jakarta, Indonesia",
+    kind: "internship",
+    points: [
+      "Worked on internal digital systems, from the early concept stage through to building out features.",
+      "Helped put those solutions in place for the business and operations side.",
+    ],
+    tags: ["Digital Systems", "Feature Development", "Business Requirements"],
+  },
+  {
+    role: "Education Staff",
+    org: "Student Association of Informatics Engineering, Universitas Budi Luhur",
+    period: "Aug 2024 — Aug 2025",
+    location: "Jakarta, Indonesia",
+    kind: "work",
+    points: [
+      "Worked with the other divisions to document our programmes, keeping written and video records of what happened.",
+      "Made learning videos and wrote articles for students, and designed the visuals for them in Canva.",
+    ],
+    tags: ["Documentation", "Content", "Canva"],
+  },
+  {
+    role: "Catering & Logistics, Event Committee",
+    org: "PEMATIK — Informatics Engineering Student Week",
+    period: "Mar 2025",
+    location: "Jakarta, Indonesia",
+    kind: "work",
+    points: [
+      "Planned and ran the food for participants and committee across the whole event.",
+      "Dealt with the vendors and timed distribution so meals landed between sessions instead of cutting into them.",
+    ],
+    tags: ["Event Operations", "Vendor Coordination"],
+  },
+  {
+    role: "Bachelor of Informatics Engineering",
     org: "Universitas Budi Luhur",
-    period: "2023 — sekarang",
+    period: "Aug 2023 — Aug 2027 (Expected)",
     location: "Jakarta, Indonesia",
     kind: "education",
-    points: [
-      "[ADD IPK / relevant coursework — opsional, isi kalau menguntungkan]",
-    ],
+    points: [],
     tags: ["Computer Science"],
   },
 ];
