@@ -1,4 +1,4 @@
-import { heroStats, profile } from "../../data";
+import { heroMarquee, profile } from "../../data";
 import { Icon } from "../ui/Icon";
 import { Reveal } from "../ui/Primitives";
 import { isFilled } from "../../lib/placeholder";
@@ -96,31 +96,24 @@ export function Hero() {
           </div>
         </Reveal>
 
-        {/* ── strip angka: bukti kerja, bukan hiasan ────────────── */}
+        {/* ── strip kalimat: sikap, bukan angka ─────────────────── */}
         <Reveal delay={440}>
-          <div className="marquee-wrap mt-12 overflow-hidden rounded-xl border border-line bg-surface/60 backdrop-blur-sm sm:mt-14">
-            <div className="flex items-center gap-3 border-b border-line px-4 py-2">
-              <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-tech" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-                Cakupan sistem yang saya bangun
-              </span>
-            </div>
+          <div className="marquee-wrap mt-12 overflow-hidden border-y border-line sm:mt-14">
             {/* mask ada di pembungkus yang DIAM; kalau ditempel di
                 track yang bergerak, gradiennya ikut berjalan */}
             <div className="edge-fade overflow-hidden">
-              <div className="marquee-track py-3.5" aria-hidden="true">
+              <div className="marquee-track py-4" aria-hidden="true">
                 {[0, 1].map((dup) => (
-                  <div key={dup} className="flex shrink-0">
-                    {heroStats.map((s) => (
-                      <div
-                        key={`${dup}-${s.label}`}
-                        className="flex items-baseline gap-2.5 border-r border-line px-6"
-                      >
-                        <span className="font-mono text-base font-bold text-ink tnum">
-                          {s.value}
+                  <div key={dup} className="flex shrink-0 items-center">
+                    {heroMarquee.map((line) => (
+                      <span key={`${dup}-${line}`} className="flex items-center whitespace-nowrap">
+                        <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-2">
+                          {line}
                         </span>
-                        <span className="whitespace-nowrap text-xs text-muted">{s.label}</span>
-                      </div>
+                        <span className="mx-7 text-tech" aria-hidden>
+                          <Icon name="spark" size={11} />
+                        </span>
+                      </span>
                     ))}
                   </div>
                 ))}
@@ -128,10 +121,8 @@ export function Hero() {
             </div>
             {/* versi statis untuk pembaca layar & mode reduced-motion */}
             <ul className="sr-only">
-              {heroStats.map((s) => (
-                <li key={s.label}>
-                  {s.value} {s.label}
-                </li>
+              {heroMarquee.map((line) => (
+                <li key={line}>{line}</li>
               ))}
             </ul>
           </div>

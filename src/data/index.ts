@@ -1,6 +1,6 @@
 /* Satu pintu masuk untuk semua isi halaman. */
 
-export { profile, heroStats } from "./profile";
+export { profile, heroMarquee } from "./profile";
 export { about } from "./about";
 export { experience } from "./experience";
 export { projects, projectFilters } from "./projects";

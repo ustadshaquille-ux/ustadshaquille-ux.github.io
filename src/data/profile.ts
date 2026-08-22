@@ -1,4 +1,4 @@
-import type { Profile, Stat } from "../types";
+import type { Profile } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
    IDENTITAS + LINK
@@ -47,14 +47,18 @@ export const profile: Profile = {
   ],
 };
 
-/* ── Angka di strip hero ────────────────────────────────────────────
-   Semua angka ini nyata dan bisa dihitung ulang dari repositori kerja.
-   Jangan menambah angka yang tidak bisa Anda tunjukkan sumbernya.  */
-export const heroStats: Stat[] = [
-  { value: "958",     label: "saham IDX terlacak",     verified: true },
-  { value: "101",     label: "anggota bursa dipetakan", verified: true },
-  { value: "2,6 jt",  label: "price bar · 20 tahun",   verified: true },
-  { value: "43.000+", label: "baris Python",           verified: true },
-  { value: "1.266",   label: "automated test lulus",   verified: true },
-  { value: "4.913",   label: "hari bursa diarsipkan",  verified: true },
+/* ── Kalimat di strip hero ──────────────────────────────────────────
+   Isi bebas: slogan, prinsip kerja, atau cara Anda memandang sesuatu.
+   Aturan satu-satunya, jangan memakai angka pencapaian di sini —
+   strip yang berjalan terus-menerus membuat angka terbaca seperti
+   pamer, sedangkan kalimat pendek terbaca seperti sikap.
+
+   Pendek lebih baik daripada lengkap: strip ini bergerak, jadi tiap
+   kalimat hanya sempat dibaca sekilas. Empat sampai enam kata cukup.  */
+export const heroMarquee: string[] = [
+  "Different route, same finish",
+  "Builds the tool, then uses it",
+  "Evidence before conclusion",
+  "Says I don't know, only once",
+  "Ships things people actually use",
 ];
