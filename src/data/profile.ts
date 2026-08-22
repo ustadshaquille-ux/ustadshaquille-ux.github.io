@@ -21,13 +21,13 @@ export const profile: Profile = {
   // Foto formal diambil dari CV. Ganti file di public/profile.png,
   // atau arahkan ke file lain di sini.
   photo: "/profile.png",
-  photoAlt: "Foto profil M Shaquille Mutaqi",
+  photoAlt: "M Shaquille Mutaqi berdiri mengenakan jas hitam",
 
   // Foto hero: PNG dengan latar SUDAH DIHAPUS, supaya sosoknya
   // berdiri di depan tulisan raksasa. Simpan di public/, lalu ganti
   // nilai di bawah. Selama masih "[ADD ...]", hero menampilkan
   // kotak putus-putus, bukan foto yang salah tempat.
-  photoCutout: "[ADD CUTOUT PHOTO]",
+  photoCutout: "/shaquille-cutout.png",
 
   handle: "@ustadshaquille",
 
