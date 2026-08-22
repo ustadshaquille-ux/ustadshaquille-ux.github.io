@@ -28,9 +28,11 @@ export const projects: Project[] = [
       { value: "1,383", label: "automated tests passing" },
     ],
     image: "/projects/market-research-terminal.jpg",
-    status: "Desktop application. Runs locally against a private market data archive, so there is no public demo.",
+    status: "Desktop application. The code is public, but it runs against a private market data archive, so there is no live demo to click.",
     featured: true,
-    links: [],
+    links: [
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/market-research-terminal", icon: "github" },
+    ],
   },
   {
     id: "equity-terminal",
@@ -69,6 +71,7 @@ export const projects: Project[] = [
     featured: true,
     links: [
       { label: "Open the site", href: "https://tbagsbook-production.up.railway.app/", icon: "external" },
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/tbagsbook", icon: "github" },
     ],
   },
   {
