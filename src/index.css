@@ -68,6 +68,8 @@
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Consolas", monospace;
+  --font-poster: "Anton", "Arial Narrow", "Haettenschweiler", sans-serif;
+  --font-script: "Great Vibes", "Segoe Script", cursive;
 }
 
 /* ══════════════════════════════════════════════════════════════════
@@ -121,6 +123,38 @@
    ══════════════════════════════════════════════════════════════════ */
 
 .tnum { font-variant-numeric: tabular-nums; }
+
+/* ══════════════════════════════════════════════════════════════════
+   HERO POSTER
+   Nama dicetak sebesar mungkin lalu ditimpa sosoknya, seperti sampul
+   majalah. Ukurannya memakai vw supaya selalu memenuhi lebar layar,
+   bukan angka tetap yang pecah di layar kecil.
+   ══════════════════════════════════════════════════════════════════ */
+
+.poster-type {
+  font-family: var(--font-poster);
+  font-size: clamp(3rem, 18.5vw, 13.5rem);
+  line-height: 0.82;
+  letter-spacing: -0.015em;
+  color: var(--c-text);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.script-name {
+  font-family: var(--font-script);
+  font-size: clamp(2rem, 7.5vw, 4.4rem);
+  line-height: 1.05;
+  color: var(--c-text);
+  /* Great Vibes punya ekor panjang di bawah garis dasar */
+  padding-bottom: 0.12em;
+}
+
+/* Bayangan tipis di kaki sosok supaya tidak terlihat mengambang
+   di atas huruf raksasa. */
+.cutout-shadow {
+  filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.28));
+}
 
 /* Semua class di bawah masuk layer `components` dengan sengaja: layer
    utilities Tailwind datang SESUDAHNYA, jadi `border-dashed` atau

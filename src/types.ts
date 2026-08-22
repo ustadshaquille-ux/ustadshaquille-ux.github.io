@@ -37,6 +37,12 @@ export interface Profile {
   phone: Maybe;
   /** path relatif ke /public, mis. "/profile.png" */
   photo: Maybe;
+  /** foto latar-transparan untuk hero; PNG hasil hapus background */
+  photoCutout: Maybe;
+  /** nama panggilan di baris kaki hero, mis. "@shaquille" */
+  handle: string;
+  /** paragraf perkenalan di hero, 2-3 kalimat */
+  intro: string;
   /** alt text foto (aksesibilitas + SEO) */
   photoAlt: string;
   /** path/URL CV */

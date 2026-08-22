@@ -1,18 +1,27 @@
 import { heroStats, profile } from "../../data";
 import { Icon } from "../ui/Icon";
-import { LinkButton, PlaceholderChip, Reveal } from "../ui/Primitives";
-import { isFilled, isPlaceholder } from "../../lib/placeholder";
+import { Reveal } from "../ui/Primitives";
+import { isFilled } from "../../lib/placeholder";
 
 /* ══════════════════════════════════════════════════════════════════
    HERO
-   Tiga detik pertama harus menyampaikan satu hal: orang ini berdiri
-   di dua kaki — teknologi dan pasar modal. Karena itu ada rel
-   gradien cyan->emas di kiri, dan strip angka nyata di bawah.
+   Disusun seperti sampul majalah: nama dicetak sebesar lebar layar,
+   lalu sosoknya berdiri menimpa huruf-huruf itu. Urutan bacanya
+   sengaja nama dulu, orangnya kedua, kalimatnya ketiga — sebab itu
+   urutan yang dipakai orang saat bertemu seseorang.
+
+   Foto yang dipakai di sini WAJIB berlatar transparan. Foto biasa
+   dengan latar kotak akan merusak tumpukannya, jadi selama
+   profile.photoCutout belum diisi, yang muncul adalah bingkai
+   putus-putus berisi petunjuk — bukan foto yang salah.
    ══════════════════════════════════════════════════════════════════ */
 
+/** Nama yang dicetak raksasa. Nama panggilan lebih kuat daripada
+    nama lengkap: lebih pendek, jadi hurufnya bisa jauh lebih besar. */
+const POSTER_WORD = "SHAQUILLE";
+
 export function Hero() {
-  const primaryLinks = profile.links.filter((l) => l.primary);
-  const photoReady = isFilled(profile.photo);
+  const cutoutReady = isFilled(profile.photoCutout);
 
   return (
     <section id="top" className="relative overflow-hidden">
@@ -24,116 +33,72 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36">
-        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-16">
-          {/* ── kiri: identitas ── */}
-          <div>
-            <Reveal>
-              <div className="mb-6 inline-flex items-center gap-2.5 rounded-full border border-line bg-surface/70 py-1.5 pl-2 pr-4 backdrop-blur-sm">
-                <span className="rail-dual h-4 w-1 rounded-full" />
-                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink-2">
-                  {profile.eyebrow}
-                </span>
-              </div>
-            </Reveal>
+      <div className="relative mx-auto w-full max-w-6xl px-5 pb-14 pt-24 sm:px-8 sm:pt-28">
+        {/* ── panggung: huruf raksasa + sosok ───────────────────── */}
+        <div className="relative flex min-h-[62vh] items-end justify-center sm:min-h-[70vh]">
+          {/* lapisan 1 — nama raksasa, di belakang */}
+          <Reveal className="pointer-events-none absolute inset-x-0 top-0 flex justify-center">
+            <span className="poster-type" aria-hidden>
+              {POSTER_WORD}
+            </span>
+          </Reveal>
 
-            <Reveal delay={60}>
-              <h1 className="text-balance text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.03em] text-ink sm:text-6xl lg:text-[4.2rem]">
-                {profile.name}
-              </h1>
-            </Reveal>
-
-            <Reveal delay={120}>
-              <p className="mt-4 font-mono text-sm text-dual sm:text-base">{profile.title}</p>
-            </Reveal>
-
-            <Reveal delay={180}>
-              <p className="mt-5 max-w-xl text-balance text-base leading-relaxed text-ink-2 sm:text-lg">
-                {profile.tagline}
-              </p>
-            </Reveal>
-
-            <Reveal delay={240}>
-              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-muted">
-                <span className="inline-flex items-center gap-1.5">
-                  <Icon name="location" size={15} />
-                  {profile.location}
-                </span>
-                {isFilled(profile.email) && (
-                  <a
-                    href={`mailto:${profile.email}`}
-                    className="inline-flex items-center gap-1.5 transition-colors hover:text-tech"
-                  >
-                    <Icon name="mail" size={15} />
-                    {profile.email}
-                  </a>
-                )}
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-up" />
-                  Terbuka untuk internship & entry level
-                </span>
-              </div>
-            </Reveal>
-
-            <Reveal delay={300}>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                {primaryLinks.map((link, i) =>
-                  isPlaceholder(link.href) ? (
-                    <PlaceholderChip key={link.label} value={link.href} />
-                  ) : (
-                    <LinkButton
-                      key={link.label}
-                      href={link.href}
-                      label={link.label}
-                      icon={link.icon}
-                      variant={i === 0 ? "primary" : "outline"}
-                    />
-                  ),
-                )}
-              </div>
-            </Reveal>
-          </div>
-
-          {/* ── kanan: foto ── */}
-          <Reveal delay={200} className="order-first lg:order-none">
-            <div className="relative mx-auto w-44 sm:w-56 lg:w-[17rem]">
-              {/* rel dua warna di sisi kiri foto */}
-              <span
-                className="rail-dual absolute -left-3 top-4 bottom-4 w-[3px] rounded-full opacity-80"
-                aria-hidden
+          {/* lapisan 2 — sosok, menimpa huruf */}
+          <Reveal delay={120} className="relative z-10 w-full">
+            {cutoutReady ? (
+              <img
+                src={profile.photoCutout}
+                alt={profile.photoAlt}
+                fetchPriority="high"
+                decoding="async"
+                className="cutout-shadow mx-auto max-h-[58vh] w-auto object-contain sm:max-h-[66vh]"
               />
-              <div className="card overflow-hidden">
-                <div className="portrait-bed aspect-[3/4] w-full">
-                  {photoReady ? (
-                    <img
-                      src={profile.photo}
-                      alt={profile.photoAlt}
-                      width={468}
-                      height={626}
-                      fetchPriority="high"
-                      decoding="async"
-                      className="h-full w-full object-cover object-top"
-                    />
-                  ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center gap-3 border-2 border-dashed border-line-2 text-muted">
-                      <Icon name="spark" size={26} />
-                      <span className="font-mono text-[11px] uppercase tracking-widest">
-                        ADD PHOTO
-                      </span>
-                      <span className="px-4 text-center text-[10px] leading-tight">
-                        taruh di public/ lalu ubah <code>profile.photo</code>
-                      </span>
-                    </div>
-                  )}
-                </div>
+            ) : (
+              <div className="mx-auto flex aspect-[3/4] w-52 max-w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-line-2 bg-surface/70 px-5 text-center text-muted backdrop-blur-sm sm:w-64">
+                <Icon name="spark" size={26} />
+                <span className="font-mono text-[11px] uppercase tracking-widest">
+                  Foto latar transparan
+                </span>
+                <span className="text-[10px] leading-snug">
+                  Simpan PNG tanpa latar di <code>public/</code>, lalu isi{" "}
+                  <code>photoCutout</code> di <code>src/data/profile.ts</code>
+                </span>
               </div>
-            </div>
+            )}
+          </Reveal>
+
+          {/* lapisan 3 — tanda tangan, paling depan */}
+          <Reveal
+            delay={240}
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center"
+          >
+            <span className="script-name">{profile.name}</span>
           </Reveal>
         </div>
 
-        {/* ── strip angka: "market ticker" tapi isinya bukti kerja ── */}
-        <Reveal delay={360}>
-          <div className="marquee-wrap mt-14 overflow-hidden rounded-xl border border-line bg-surface/60 backdrop-blur-sm sm:mt-16">
+        {/* ── perkenalan ────────────────────────────────────────── */}
+        <Reveal delay={320}>
+          <p className="mx-auto mt-8 max-w-2xl text-balance text-center text-[15px] italic leading-relaxed text-ink-2 sm:mt-10 sm:text-base">
+            {profile.intro}
+          </p>
+        </Reveal>
+
+        {/* ── baris kaki: nama · pemisah · nama panggilan ───────── */}
+        <Reveal delay={380}>
+          <div className="mt-10 flex items-center justify-between gap-4 border-t border-line pt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted sm:mt-12">
+            <span>{profile.title}</span>
+            <span className="hidden items-center gap-2 text-ink-2 sm:flex" aria-hidden>
+              <Icon name="spark" size={12} />
+              <Icon name="spark" size={12} />
+              <Icon name="spark" size={12} />
+            </span>
+            <span>{profile.handle}</span>
+          </div>
+        </Reveal>
+
+        {/* ── strip angka: bukti kerja, bukan hiasan ────────────── */}
+        <Reveal delay={440}>
+          <div className="marquee-wrap mt-12 overflow-hidden rounded-xl border border-line bg-surface/60 backdrop-blur-sm sm:mt-14">
             <div className="flex items-center gap-3 border-b border-line px-4 py-2">
               <span className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-tech" />
               <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">

@@ -23,6 +23,20 @@ export const profile: Profile = {
   photo: "/profile.png",
   photoAlt: "Foto profil M Shaquille Mutaqi",
 
+  // Foto hero: PNG dengan latar SUDAH DIHAPUS, supaya sosoknya
+  // berdiri di depan tulisan raksasa. Simpan di public/, lalu ganti
+  // nilai di bawah. Selama masih "[ADD ...]", hero menampilkan
+  // kotak putus-putus, bukan foto yang salah tempat.
+  photoCutout: "[ADD CUTOUT PHOTO]",
+
+  handle: "@ustadshaquille",
+
+  intro:
+    "I build my own route to a solution rather than waiting for one to " +
+    "exist, and I'm comfortable taking on work I've never touched before. " +
+    "I'll say I don't know when I don't know. I'm just not the type to " +
+    "say it twice.",
+
   cv: "/cv/CV-Shaquille-Capital-Market.pdf",
 
   links: [
