@@ -27,20 +27,36 @@ export function Section({ id, index, title, lead, children, tone = "plain" }: Se
     >
       <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <header className="reveal mb-10 sm:mb-14">
-          <div className="mb-3 flex items-center gap-3">
+          <div className="mb-4 flex items-center gap-3">
             <span className="font-mono text-xs tracking-[0.18em] text-tech tnum">{index}</span>
             <span className="h-px w-8 bg-line-2" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+          </div>
+
+          {/* Judul dicetak tiga kali: dua gema bergaris luar di belakang,
+              satu pejal di depan. Hanya yang pejal dibaca pembaca layar. */}
+          <h2 className="judul-tumpuk">
+            <span className="gema gema-2" aria-hidden>
               {title}
             </span>
-          </div>
+            <span className="gema gema-1" aria-hidden>
+              {title}
+            </span>
+            <span className="pejal">{title}</span>
+          </h2>
+
           {lead && (
-            <p className="max-w-3xl text-balance text-xl font-semibold leading-snug text-ink sm:text-2xl">
+            <p className="mt-5 max-w-3xl text-balance text-lg leading-relaxed text-ink-2 sm:text-xl">
               {lead}
             </p>
           )}
         </header>
+
         {children}
+
+        <div className="kaki-bagian">
+          <span>Muhammad Shaquille Muttaqi</span>
+          <span>ustadshaquille-ux.github.io</span>
+        </div>
       </div>
     </section>
   );

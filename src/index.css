@@ -143,6 +143,60 @@
 
 /* Bayangan tipis di kaki sosok supaya tidak terlihat mengambang
    di atas huruf raksasa. */
+/* ══════════════════════════════════════════════════════════════════
+   JUDUL BERTUMPUK
+   Satu kata dicetak tiga kali: dua gema bergaris luar di belakang,
+   satu yang pejal di depan. Gemanya bergeser sedikit demi sedikit
+   sehingga terbaca sebagai kedalaman, bukan sebagai bayangan.
+
+   Gema memakai aria-hidden dan dibaca sebagai hiasan; yang dibaca
+   pembaca layar hanya satu, yang pejal.
+   ══════════════════════════════════════════════════════════════════ */
+
+.judul-tumpuk {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-poster);
+  font-size: clamp(2.1rem, 6.5vw, 4.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.judul-tumpuk .pejal {
+  position: relative;
+  z-index: 2;
+  color: var(--c-text);
+}
+
+.judul-tumpuk .gema {
+  position: absolute;
+  inset: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--c-tech);
+  pointer-events: none;
+  user-select: none;
+}
+
+.judul-tumpuk .gema-1 { transform: translate(0.09em, -0.09em); opacity: 0.55; }
+.judul-tumpuk .gema-2 { transform: translate(0.18em, -0.18em); opacity: 0.25; }
+
+/* Baris kaki tiap bagian, meniru footer tetap pada tiap halaman
+   presentasi: menandai bahwa satu bagian sudah selesai. */
+.kaki-bagian {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--c-border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
 .cutout-shadow {
   filter: drop-shadow(0 24px 32px rgba(0, 0, 0, 0.28));
 }
