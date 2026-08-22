@@ -67,5 +67,4 @@ export function useActiveSection(ids: readonly string[]): string {
   return active;
 }
 
-export type Theme = "dark" | "light";
 
