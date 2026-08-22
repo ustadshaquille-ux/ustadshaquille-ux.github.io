@@ -22,7 +22,13 @@ import { useRute } from "./lib/router";
 
 export default function App() {
   const rute = useRute();
-  useRevealOnScroll();
+
+  // Pengamat kemunculan HARUS dipasang ulang tiap kali rute berganti.
+  // Elemen .reveal mulai dari opacity 0 dan baru ditampilkan setelah
+  // diamati; kalau pengamatnya hanya dipasang sekali saat halaman
+  // pertama dimuat, seluruh isi halaman proyek tidak pernah muncul —
+  // halamannya ada, tetapi transparan.
+  useRevealOnScroll([rute.nama, rute.nama === "proyek" ? rute.id : ""]);
 
   if (rute.nama === "proyek") {
     return (
