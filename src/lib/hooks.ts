@@ -85,7 +85,7 @@ export function useTheme(): [Theme, () => void] {
       /* mode privat: abaikan, tema tetap jalan untuk sesi ini */
     }
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#070A0F" : "#F6F7F9");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#0C0F0E" : "#FAF9F6");
   }, [theme]);
 
   return [theme, () => setTheme((t) => (t === "dark" ? "light" : "dark"))];

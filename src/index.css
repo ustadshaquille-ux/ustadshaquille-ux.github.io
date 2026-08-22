@@ -2,50 +2,52 @@
 
 /* ══════════════════════════════════════════════════════════════════
    DESIGN TOKENS
-   Dua aksen sengaja dipakai: CYAN = sisi teknologi, GOLD = sisi pasar
-   modal. Setiap kali keduanya muncul berdampingan (garis hero, badge
-   kategori, ikon section) itu bukan hiasan — itu pesan utamanya.
+   Dua aksen sengaja dipakai: HIJAU HUTAN = sisi teknologi, KUNINGAN =
+   sisi pasar modal. Setiap kali keduanya muncul berdampingan (garis
+   hero, badge kategori, ikon section) itu bukan hiasan — itu pesannya.
+   Latar sengaja gading, bukan putih murni: putih #FFF pada layar terang
+   memantul keras dan melelahkan mata pada bacaan panjang.
    Ganti warna? Cukup di blok ini. Sisa halaman ikut otomatis.
    ══════════════════════════════════════════════════════════════════ */
 
 :root,
 [data-theme="light"] {
-  --c-bg:        #F6F7F9;
-  --c-bg-soft:   #EDF0F4;
+  --c-bg:        #FAF9F6;
+  --c-bg-soft:   #F2F0EA;
   --c-surface:   #FFFFFF;
-  --c-surface-2: #F3F5F9;
-  --c-border:    #DFE5EC;
-  --c-border-2:  #C9D3DE;
-  --c-text:      #0B1220;
-  --c-text-2:    #38455A;
-  --c-muted:     #64748B;
-  --c-tech:      #0E8FA8;
-  --c-market:    #A9720A;
-  --c-up:        #15803D;
-  --c-down:      #BE2C2C;
-  --c-grid:      rgba(11, 18, 32, 0.045);
-  --c-glow-a:    rgba(14, 143, 168, 0.10);
-  --c-glow-b:    rgba(169, 114, 10, 0.09);
-  --c-shadow:    0 1px 2px rgba(11, 18, 32, .05), 0 8px 24px -12px rgba(11, 18, 32, .16);
+  --c-surface-2: #F7F5F0;
+  --c-border:    #E4E0D6;
+  --c-border-2:  #CFC9BA;
+  --c-text:      #14181B;
+  --c-text-2:    #3D443F;
+  --c-muted:     #6B7169;
+  --c-tech:      #1F6F54;
+  --c-market:    #A67C3D;
+  --c-up:        #2F8F63;
+  --c-down:      #A8443C;
+  --c-grid:      rgba(20, 24, 27, 0.045);
+  --c-glow-a:    rgba(31, 111, 84, 0.10);
+  --c-glow-b:    rgba(166, 124, 61, 0.09);
+  --c-shadow:    0 1px 2px rgba(20, 24, 27, .05), 0 8px 24px -12px rgba(20, 24, 27, .16);
 }
 
 [data-theme="dark"] {
-  --c-bg:        #070A0F;
-  --c-bg-soft:   #0A0E15;
-  --c-surface:   #0D121B;
-  --c-surface-2: #121926;
-  --c-border:    #1C2635;
-  --c-border-2:  #2A3648;
-  --c-text:      #E7EDF5;
-  --c-text-2:    #B4C0D0;
-  --c-muted:     #7C8CA1;
-  --c-tech:      #22D3EE;
-  --c-market:    #F0B429;
-  --c-up:        #34D399;
-  --c-down:      #F87171;
-  --c-grid:      rgba(158, 190, 224, 0.045);
-  --c-glow-a:    rgba(34, 211, 238, 0.12);
-  --c-glow-b:    rgba(240, 180, 41, 0.10);
+  --c-bg:        #0C0F0E;
+  --c-bg-soft:   #101413;
+  --c-surface:   #121615;
+  --c-surface-2: #171C1A;
+  --c-border:    #232A27;
+  --c-border-2:  #333C38;
+  --c-text:      #E8E6E1;
+  --c-text-2:    #B9BDB6;
+  --c-muted:     #838A82;
+  --c-tech:      #5FBF9B;
+  --c-market:    #D4A857;
+  --c-up:        #6FD3A6;
+  --c-down:      #E08A7E;
+  --c-grid:      rgba(232, 230, 225, 0.045);
+  --c-glow-a:    rgba(95, 191, 155, 0.12);
+  --c-glow-b:    rgba(212, 168, 87, 0.10);
   --c-shadow:    0 1px 2px rgba(0, 0, 0, .5), 0 16px 40px -20px rgba(0, 0, 0, .8);
 }
 
