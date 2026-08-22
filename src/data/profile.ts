@@ -27,7 +27,11 @@ export const profile: Profile = {
   // berdiri di depan tulisan raksasa. Simpan di public/, lalu ganti
   // nilai di bawah. Selama masih "[ADD ...]", hero menampilkan
   // kotak putus-putus, bukan foto yang salah tempat.
-  photoCutout: "/shaquille-cutout.png",
+  // Dua pilihan tersedia di public/. Yang dipakai sekarang adalah
+  // foto bercahaya samping: bagian gelapnya transparan, jadi huruf
+  // raksasa di hero tembus dari baliknya. Ganti ke
+  // "/shaquille-cutout.png" untuk versi jas hitam berdiri penuh.
+  photoCutout: "/shaquille-moody.png",
 
   handle: "@ustadshaquille",
 
