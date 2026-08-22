@@ -181,6 +181,25 @@ export function ProjectPage({ id }: { id: string }) {
                           className="w-full rounded-xl border border-line"
                         />
                       </figure>
+                    ) : langkah.terminal ? (
+                      /* Langkah yang dijalankan lewat baris perintah tidak
+                         punya jendela untuk difoto. Yang ditampilkan adalah
+                         keluarannya yang sebenarnya, disalin apa adanya. */
+                      <figure className={i % 2 === 1 ? "lg:order-1" : ""}>
+                        <div className="overflow-hidden rounded-xl border border-line bg-surface-2">
+                          <div className="flex items-center gap-2 border-b border-line px-4 py-2">
+                            <span className="h-2 w-2 rounded-full bg-line-2" aria-hidden />
+                            <span className="h-2 w-2 rounded-full bg-line-2" aria-hidden />
+                            <span className="h-2 w-2 rounded-full bg-line-2" aria-hidden />
+                            <code className="ml-2 font-mono text-[11px] text-muted">
+                              {langkah.terminal.command}
+                            </code>
+                          </div>
+                          <pre className="overflow-x-auto p-4 font-mono text-[11.5px] leading-relaxed text-ink-2">
+                            {langkah.terminal.output}
+                          </pre>
+                        </div>
+                      </figure>
                     ) : (
                       <div aria-hidden />
                     )}
