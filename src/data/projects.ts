@@ -27,12 +27,10 @@ export const projects: Project[] = [
       { value: "40s → 0.35s", label: "load time after caching" },
       { value: "1,383", label: "automated tests passing" },
     ],
-    image: "[ADD IMAGE]",
+    image: "/projects/market-research-terminal.jpg",
     status: "Desktop application. Runs locally against a private market data archive, so there is no public demo.",
     featured: true,
-    links: [
-      { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
-    ],
+    links: [],
   },
   {
     id: "equity-terminal",
@@ -46,12 +44,12 @@ export const projects: Project[] = [
       { value: "70+", label: "financial fields parsed" },
       { value: "0", label: "external dependencies" },
     ],
-    image: "[ADD IMAGE]",
+    image: "/projects/equity-terminal.jpg",
     status: "Runs entirely in the browser. Open it and paste your own data.",
     featured: true,
     links: [
-      { label: "Open", href: "[ADD DEMO LINK]", icon: "external" },
-      { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
+      { label: "Open the tool", href: "https://ustadshaquille-ux.github.io/equity-terminal/", icon: "external" },
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/equity-terminal", icon: "github" },
     ],
   },
   {
@@ -66,12 +64,11 @@ export const projects: Project[] = [
       { value: "2FA", label: "required, not optional" },
       { value: "Live", label: "deployed and in use" },
     ],
-    image: "[ADD IMAGE]",
+    image: "/projects/tbagsbook.jpg",
     status: "Deployed and in use.",
     featured: true,
     links: [
-      { label: "Open", href: "[ADD DEMO LINK]", icon: "external" },
-      { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
+      { label: "Open the site", href: "https://tbagsbook-production.up.railway.app/", icon: "external" },
     ],
   },
   {
@@ -86,11 +83,11 @@ export const projects: Project[] = [
       { value: "11", label: "product documents written" },
       { value: "B2B", label: "reframed from B2C" },
     ],
-    image: "[ADD IMAGE]",
+    image: "/projects/atlas-concierge.jpg",
     status: "Prototype. Needs a PostgreSQL database, so it runs locally rather than on a public URL.",
     featured: true,
     links: [
-      { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/atlas-hotelinx", icon: "github" },
     ],
   },
 ];
