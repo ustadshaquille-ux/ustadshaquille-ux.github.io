@@ -3,6 +3,7 @@ import type { Project } from "../../types";
 import { Chip, LinkButton, PlaceholderChip, Reveal, Section } from "../ui/Primitives";
 import { ProjectCover } from "../ui/ProjectCover";
 import { isPlaceholder } from "../../lib/placeholder";
+import { tautanProyek } from "../../lib/router";
 
 /* ══════════════════════════════════════════════════════════════════
    PROJECTS
@@ -24,9 +25,12 @@ function Baris({ project, index }: { project: Project; index: number }) {
       <article className="grid items-center gap-7 border-t border-line py-10 lg:grid-cols-2 lg:gap-14 lg:py-14">
         {/* ── gambar ── */}
         <div className={kanan ? "lg:order-2" : ""}>
-          <div className="overflow-hidden rounded-xl border border-line bg-surface-2">
+          <a
+            href={tautanProyek(project.id)}
+            className="block overflow-hidden rounded-xl border border-line bg-surface-2 transition-colors hover:border-tech"
+          >
             <ProjectCover id={project.id} title={project.title} image={project.image} />
-          </div>
+          </a>
         </div>
 
         {/* ── keterangan ── */}
@@ -44,7 +48,9 @@ function Baris({ project, index }: { project: Project; index: number }) {
           </p>
 
           <h3 className="mb-3 text-balance text-xl font-semibold leading-tight text-ink sm:text-2xl">
-            {project.title}
+            <a href={tautanProyek(project.id)} className="transition-colors hover:text-tech">
+              {project.title}
+            </a>
           </h3>
 
           <p className="mb-4 max-w-prose text-[14.5px] leading-relaxed text-ink-2">
@@ -75,7 +81,13 @@ function Baris({ project, index }: { project: Project; index: number }) {
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            {project.links.map((link, i) =>
+            <LinkButton
+              href={tautanProyek(project.id)}
+              label="How it works"
+              icon="external"
+              variant="primary"
+            />
+            {project.links.map((link) =>
               isPlaceholder(link.href) ? (
                 <PlaceholderChip key={link.label} value={link.href} />
               ) : (
@@ -84,7 +96,7 @@ function Baris({ project, index }: { project: Project; index: number }) {
                   href={link.href}
                   label={link.label}
                   icon={link.icon}
-                  variant={i === 0 ? "primary" : "outline"}
+                  variant="outline"
                 />
               ),
             )}
