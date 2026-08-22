@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A0A0B" />
+    <meta name="color-scheme" content="dark" />
 
     <!-- ══ SEO DASAR — edit di sini ══════════════════════════════ -->
     <title>M Shaquille Mutaqi — Capital Market Data &amp; Analytics · Python</title>
@@ -49,18 +50,6 @@
       }
     </script>
 
-    <script>
-      // Terapkan tema sebelum paint pertama supaya tidak ada kedip putih.
-      // ?theme=light / ?theme=dark menang atas pilihan tersimpan —
-      // berguna untuk mengetes atau mengirim tautan dalam mode tertentu.
-      (function () {
-        try {
-          var q = new URLSearchParams(location.search).get("theme");
-          var t = q === "light" || q === "dark" ? q : localStorage.getItem("theme");
-          if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
-        } catch (e) {}
-      })();
-    </script>
   </head>
   <body>
     <div id="root"></div>

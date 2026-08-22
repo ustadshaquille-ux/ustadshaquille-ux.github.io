@@ -69,24 +69,3 @@ export function useActiveSection(ids: readonly string[]): string {
 
 export type Theme = "dark" | "light";
 
-/** Tema disimpan di localStorage; nilai awal sudah dipasang oleh
- *  script inline di index.html supaya tidak ada kedip. */
-export function useTheme(): [Theme, () => void] {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof document === "undefined") return "dark";
-    return (document.documentElement.dataset.theme as Theme) ?? "dark";
-  });
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    try {
-      localStorage.setItem("theme", theme);
-    } catch {
-      /* mode privat: abaikan, tema tetap jalan untuk sesi ini */
-    }
-    const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#0A0A0B" : "#FAF9F6");
-  }, [theme]);
-
-  return [theme, () => setTheme((t) => (t === "dark" ? "light" : "dark"))];
-}

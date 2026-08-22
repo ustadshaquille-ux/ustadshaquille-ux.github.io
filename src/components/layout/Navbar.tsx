@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { navigation, profile } from "../../data";
-import { useActiveSection, useTheme } from "../../lib/hooks";
+import { useActiveSection } from "../../lib/hooks";
 import { Icon } from "../ui/Icon";
 import { isFilled } from "../../lib/placeholder";
 
@@ -8,7 +8,6 @@ const IDS = navigation.map((n) => n.id);
 
 export function Navbar() {
   const active = useActiveSection(IDS);
-  const [theme, toggleTheme] = useTheme();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -81,15 +80,6 @@ export function Navbar() {
                 CV
               </a>
             )}
-
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={theme === "dark" ? "Ganti ke mode terang" : "Ganti ke mode gelap"}
-              className="rounded-lg border border-line-2 p-2 text-muted transition-colors hover:border-tech hover:text-tech"
-            >
-              <Icon name={theme === "dark" ? "sun" : "moon"} size={16} />
-            </button>
 
             <button
               type="button"
