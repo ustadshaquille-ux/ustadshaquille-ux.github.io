@@ -95,6 +95,8 @@ export interface Project {
   title: string;
   /** satu baris di atas judul */
   kicker: string;
+  /** rentang waktu, disalin apa adanya dari CV supaya tidak ada dua versi */
+  period: string;
   /** 1-2 kalimat. Jangan paragraf. */
   summary: string;
   /** kategori pertama dipakai sebagai badge utama */

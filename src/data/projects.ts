@@ -17,6 +17,7 @@ export const projects: Project[] = [
   {
     id: "market-research-terminal",
     kicker: "Capital Market Research",
+    period: "Jan 2026 — Present",
     title: "Market Research Terminal & Quantitative Data Engine",
     summary:
       "A complete capital market research ecosystem in Python: automated data pipelines, a data validation library, and desktop applications for analysing market and broker activity.",
@@ -37,6 +38,7 @@ export const projects: Project[] = [
   {
     id: "equity-terminal",
     kicker: "Fundamental Analysis",
+    period: "Jul 2026 — Aug 2026",
     title: "Equity Terminal",
     summary:
       "A browser-based tool that turns raw financial statement data into a structured investment thesis, covering profitability, valuation, credit risk, and scenario analysis. It measures each company against its own history rather than fixed industry thresholds.",
@@ -57,6 +59,7 @@ export const projects: Project[] = [
   {
     id: "tbagsbook",
     kicker: "Full-Stack Platform",
+    period: "May 2026 — Jul 2026",
     title: "TBAGSBOOK — Digital Reading Platform",
     summary:
       "A reading platform serving books and comics with a library, commenting, and a gamified rewards system. The security layer is built end to end: Google sign-in, mandatory two-factor authentication, server-side session control, and abuse rate limiting.",
@@ -77,6 +80,7 @@ export const projects: Project[] = [
   {
     id: "atlas-concierge",
     kicker: "AI Product",
+    period: "Aug 2026",
     title: "ATLAS — AI Travel Concierge",
     summary:
       "A full-stack booking application with a database, payment flow, and AI-assisted natural language search. Pricing is always recomputed on the server, so the language model never becomes a source of numbers.",

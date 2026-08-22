@@ -115,9 +115,16 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
 
         {/* isi */}
         <div className="flex flex-1 flex-col p-5">
-          <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-            {project.kicker}
-          </p>
+          {/* Kicker dan rentang waktu dipasang berdampingan; tanggalnya
+              disalin apa adanya dari CV supaya tidak ada dua versi. */}
+          <div className="mb-1.5 flex items-baseline justify-between gap-3">
+            <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+              {project.kicker}
+            </p>
+            <p className="shrink-0 font-mono text-[10px] tracking-[0.12em] text-tech tnum">
+              {project.period}
+            </p>
+          </div>
           <h3 className="mb-2.5 text-[15px] font-semibold leading-snug text-ink">
             {project.title}
           </h3>
