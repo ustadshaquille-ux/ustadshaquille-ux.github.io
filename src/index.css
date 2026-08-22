@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   Dua aksen sengaja dipakai: CYAN = sisi teknologi, GOLD = sisi pasar
+   modal. Setiap kali keduanya muncul berdampingan (garis hero, badge
+   kategori, ikon section) itu bukan hiasan — itu pesan utamanya.
+   Ganti warna? Cukup di blok ini. Sisa halaman ikut otomatis.
+   ══════════════════════════════════════════════════════════════════ */
+
+:root,
+[data-theme="light"] {
+  --c-bg:        #F6F7F9;
+  --c-bg-soft:   #EDF0F4;
+  --c-surface:   #FFFFFF;
+  --c-surface-2: #F3F5F9;
+  --c-border:    #DFE5EC;
+  --c-border-2:  #C9D3DE;
+  --c-text:      #0B1220;
+  --c-text-2:    #38455A;
+  --c-muted:     #64748B;
+  --c-tech:      #0E8FA8;
+  --c-market:    #A9720A;
+  --c-up:        #15803D;
+  --c-down:      #BE2C2C;
+  --c-grid:      rgba(11, 18, 32, 0.045);
+  --c-glow-a:    rgba(14, 143, 168, 0.10);
+  --c-glow-b:    rgba(169, 114, 10, 0.09);
+  --c-shadow:    0 1px 2px rgba(11, 18, 32, .05), 0 8px 24px -12px rgba(11, 18, 32, .16);
+}
+
+[data-theme="dark"] {
+  --c-bg:        #070A0F;
+  --c-bg-soft:   #0A0E15;
+  --c-surface:   #0D121B;
+  --c-surface-2: #121926;
+  --c-border:    #1C2635;
+  --c-border-2:  #2A3648;
+  --c-text:      #E7EDF5;
+  --c-text-2:    #B4C0D0;
+  --c-muted:     #7C8CA1;
+  --c-tech:      #22D3EE;
+  --c-market:    #F0B429;
+  --c-up:        #34D399;
+  --c-down:      #F87171;
+  --c-grid:      rgba(158, 190, 224, 0.045);
+  --c-glow-a:    rgba(34, 211, 238, 0.12);
+  --c-glow-b:    rgba(240, 180, 41, 0.10);
+  --c-shadow:    0 1px 2px rgba(0, 0, 0, .5), 0 16px 40px -20px rgba(0, 0, 0, .8);
+}
+
+@theme inline {
+  --color-bg:        var(--c-bg);
+  --color-bg-soft:   var(--c-bg-soft);
+  --color-surface:   var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-line:      var(--c-border);
+  --color-line-2:    var(--c-border-2);
+  --color-ink:       var(--c-text);
+  --color-ink-2:     var(--c-text-2);
+  --color-muted:     var(--c-muted);
+  --color-tech:      var(--c-tech);
+  --color-market:    var(--c-market);
+  --color-up:        var(--c-up);
+  --color-down:      var(--c-down);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", "Consolas", monospace;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BASE
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Reset margin/padding/box-sizing SENGAJA tidak ditulis di sini.
+   Preflight Tailwind sudah melakukannya di layer `base`. Menulis
+   `* { margin: 0 }` di luar layer akan mengalahkan SELURUH utility
+   spacing (p-*, m-*, gap-*) karena CSS tanpa layer menang atas CSS
+   ber-layer — dan halaman terlihat seolah semua padding hilang. */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset supaya anchor tidak ketutup navbar sticky */
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--c-bg);
+    color: var(--c-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--c-tech); color: var(--c-bg); }
+
+  :focus-visible {
+    outline: 2px solid var(--c-tech);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* scrollbar terminal-ish, tapi kalem */
+  ::-webkit-scrollbar { width: 11px; height: 11px; }
+  ::-webkit-scrollbar-track { background: var(--c-bg-soft); }
+  ::-webkit-scrollbar-thumb {
+    background: var(--c-border-2);
+    border-radius: 99px;
+    border: 3px solid var(--c-bg-soft);
+  }
+  ::-webkit-scrollbar-thumb:hover { background: var(--c-muted); }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   UTILITAS
+   ══════════════════════════════════════════════════════════════════ */
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* Semua class di bawah masuk layer `components` dengan sengaja: layer
+   utilities Tailwind datang SESUDAHNYA, jadi `border-dashed` atau
+   `rounded-full` yang ditempel di samping `card` tetap menang. Kalau
+   ditulis di luar layer, CSS tanpa layer justru mengalahkan utility
+   dan hasilnya membingungkan saat menyunting markup. */
+@layer components {
+  /* Latar graticule — kesan layar riset, tanpa berisik */
+  .bg-graticule {
+    background-image:
+      linear-gradient(var(--c-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--c-grid) 1px, transparent 1px);
+    background-size: 56px 56px;
+    background-position: center center;
+  }
+
+  .glow-dual {
+    background:
+      radial-gradient(60rem 32rem at 12% -8%,  var(--c-glow-a), transparent 62%),
+      radial-gradient(52rem 30rem at 92% 10%,  var(--c-glow-b), transparent 60%);
+  }
+
+  .rail-dual {
+    background: linear-gradient(180deg, var(--c-tech) 0%, var(--c-market) 100%);
+  }
+
+  .text-dual {
+    background: linear-gradient(100deg, var(--c-tech) 0%, var(--c-market) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .card {
+    background-color: var(--c-surface);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--c-border);
+    border-radius: 14px;
+    transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+  }
+
+  .card-hover:hover {
+    border-color: var(--c-border-2);
+    transform: translateY(-3px);
+    box-shadow: var(--c-shadow);
+  }
+
+  /* Latar belakang bingkai foto: sapuan studio, bukan blok datar.
+     Foto profil sengaja PNG transparan supaya menyatu dengan ini. */
+  .portrait-bed {
+    background:
+      radial-gradient(120% 80% at 50% 8%, var(--c-glow-a), transparent 60%),
+      linear-gradient(180deg, var(--c-surface-2) 0%, var(--c-surface) 100%);
+  }
+
+  /* Tepi ticker dibuat memudar, supaya teks yang lewat tidak
+     terlihat "terpotong" oleh garis tepi kartu. */
+  .edge-fade {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   ANIMASI — hanya dua: reveal saat scroll, dan marquee ticker.
+   Keduanya mati total kalau user minta reduced motion.
+   ══════════════════════════════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s cubic-bezier(.22,.61,.36,1),
+              transform .6s cubic-bezier(.22,.61,.36,1);
+  will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-x 46s linear infinite;
+}
+.marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: .35; transform: scale(.82); }
+}
+.pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .marquee-track { animation: none; }
+  .pulse-dot { animation: none; }
+  .card-hover:hover { transform: none; }
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
+
+/* Cetak: recruiter kadang nge-print halaman ini */
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+}
