@@ -8,7 +8,7 @@ export function About() {
       id="about"
       index="01"
       title="About"
-      lead="Satu orang, dua disiplin — dan keduanya dipakai untuk pekerjaan yang sama."
+      lead="What I analyse, and what I build to analyse it with."
     >
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14">
         {/* paragraf */}

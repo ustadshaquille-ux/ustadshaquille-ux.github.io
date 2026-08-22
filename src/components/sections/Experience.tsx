@@ -20,7 +20,7 @@ export function Experience() {
       id="experience"
       index="02"
       title="Experience"
-      lead="Jalur yang membawa saya ke persimpangan teknologi dan pasar modal."
+      lead="Where I have worked, and what I did there."
       tone="soft"
     >
       <ol className="relative">

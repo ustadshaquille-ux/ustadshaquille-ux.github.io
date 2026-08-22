@@ -2,35 +2,43 @@ import type { SkillGroup } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
    SKILLS
-   Sengaja TIDAK dipisah jadi blok "Programming" dan blok "Finance".
-   Kategorinya disusun menurut PEKERJAAN, supaya pembaca tidak
-   bertanya "ini anak IT atau anak finance" — Python hidup di dalam
-   ketiganya.
+   Dikelompokkan menurut disiplin, bukan menurut alat. Seorang
+   perekrut membaca daftar ini untuk menjawab satu pertanyaan:
+   "orang ini bisa dipakai di posisi apa?" — dan kelompok yang
+   bercampur membuat pertanyaan itu tidak terjawab.
+
+   Isinya hanya yang ada berkasnya. Kalau sebuah kemampuan tidak bisa
+   ditunjukkan sumbernya di salah satu proyek, ia tidak ditulis.
    ══════════════════════════════════════════════════════════════════ */
 
 export const technicalSkills: SkillGroup[] = [
   {
-    title: "Market Analysis",
-    accent: "market",
-    icon: "chart",
+    title: "Software Engineering",
+    accent: "tech",
+    icon: "code",
     items: [
-      "Broker Summary & Order Flow",
-      "Foreign / Institutional / Local Fund Flow",
-      "Price-level Footprint",
-      "Sector Rotation",
-      "Seasonality Testing",
+      "Advanced Python",
+      "TypeScript & JavaScript",
+      "React & Next.js",
+      "Node.js & Express",
+      "Desktop applications (PyQt6, Tkinter)",
+      "REST & API integration",
+      "Authentication & session security",
+      "Automated testing",
     ],
   },
   {
-    title: "Market Mechanics",
-    accent: "market",
-    icon: "brief",
+    title: "Data Engineering",
+    accent: "tech",
+    icon: "database",
     items: [
-      "Tick Size",
-      "Auto-Rejection Bands (ARA/ARB)",
-      "Transaction Cost Structure",
-      "Sector Index Composition",
-      "Exchange Member Classification",
+      "ETL pipeline design",
+      "Data validation & quality scoring",
+      "Data leakage prevention",
+      "Incremental loading & gap recovery",
+      "Web scraping & browser automation",
+      "PostgreSQL & schema design",
+      "Caching & performance optimisation",
     ],
   },
   {
@@ -38,74 +46,74 @@ export const technicalSkills: SkillGroup[] = [
     accent: "neutral",
     icon: "spark",
     items: [
-      "Regression Analysis",
-      "Correlation & Lead-lag Analysis",
-      "Statistical Significance Testing",
-      "Multiple-Comparison Correction",
-      "Backtesting",
-      "Out-of-Sample Validation",
+      "Regression analysis",
+      "Correlation & lead-lag analysis",
+      "Statistical significance testing",
+      "Multiple-comparison correction",
+      "Outlier detection",
+      "Backtesting with realistic costs",
+      "Out-of-sample & point-in-time validation",
     ],
   },
   {
-    title: "Fundamental Valuation",
+    title: "Capital Market",
     accent: "market",
     icon: "chart",
     items: [
-      "ROIC vs Cost of Capital",
-      "Reverse DCF",
-      "Residual Income & Owner Earnings",
-      "DuPont Decomposition",
-      "Earnings Quality & Accrual Analysis",
-      "Scenario Modelling",
+      "Broker summary & order flow",
+      "Foreign, institutional & local fund flow",
+      "Price-level footprint",
+      "Sector rotation & seasonality",
+      "Tick size & auto-rejection bands",
+      "Transaction cost structures",
+      "Exchange member classification",
     ],
   },
   {
-    title: "Data & Engineering",
-    accent: "tech",
-    icon: "database",
+    title: "Financial Analysis",
+    accent: "market",
+    icon: "brief",
     items: [
-      "ETL Pipeline Design",
-      "Data Validation & Quality Scoring",
-      "Data Leakage Prevention",
-      "Web Scraping & Automation",
-      "Automated Testing",
-      "Performance Optimisation",
+      "ROIC vs cost of capital",
+      "Reverse DCF",
+      "Residual income & owner earnings",
+      "DuPont decomposition",
+      "Earnings quality & accrual analysis",
+      "Credit risk scoring",
+      "Scenario modelling",
     ],
   },
   {
     title: "Tools",
     accent: "tech",
-    icon: "code",
+    icon: "brief",
     wide: true,
     items: [
-      "Advanced Python",
-      "TypeScript",
-      "JavaScript",
-      "SQL & PostgreSQL",
-      "React",
-      "Next.js",
-      "Git & CI/CD",
+      "Git & GitHub Actions",
       "Selenium",
-      "AI-Assisted Development",
+      "AI-assisted development",
+      "Tailwind CSS",
+      "Plotly & Matplotlib",
+      "Canva",
       "Microsoft Office",
     ],
   },
 ];
 
-/* Delapan saja, sama dengan CV. Daftar yang lebih panjang justru
-   melemahkan: makin banyak yang diklaim, makin sedikit yang dipercaya. */
+/* Delapan saja. Daftar yang lebih panjang justru melemahkan: makin
+   banyak yang diklaim, makin sedikit yang dipercaya. */
 export const softSkills: SkillGroup = {
   title: "Soft Skills",
   accent: "neutral",
   icon: "shield",
   items: [
-    "Analytical Thinking",
-    "Problem Solving",
-    "Detail Oriented",
-    "Root-Cause Analysis",
-    "Evidence-Based Decision Making",
-    "Technical Writing",
-    "Team Collaboration",
+    "Analytical thinking",
+    "Problem solving",
+    "Detail oriented",
+    "Root-cause analysis",
+    "Evidence-based decision making",
+    "Technical writing",
+    "Team collaboration",
     "Adaptability",
   ],
 };

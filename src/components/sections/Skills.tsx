@@ -8,7 +8,7 @@ export function Skills() {
       id="skills"
       index="04"
       title="Skills"
-      lead="Disusun menurut pekerjaannya, bukan menurut disiplinnya — Python hidup di ketiga-tiganya."
+      lead="Grouped by the kind of work, not by job title."
       tone="soft"
     >
       <div className="grid gap-4 md:grid-cols-2">

@@ -80,9 +80,6 @@ export interface ExperienceItem {
   link?: Maybe;
 }
 
-export type ProjectCategory =
-  | "Programming" | "Finance" | "Capital Market" | "Data" | "Hybrid";
-
 export interface ProjectLink {
   label: string;
   href: Maybe;
@@ -99,8 +96,6 @@ export interface Project {
   period: string;
   /** 1-2 kalimat. Jangan paragraf. */
   summary: string;
-  /** kategori pertama dipakai sebagai badge utama */
-  categories: ProjectCategory[];
   tech: string[];
   /** angka pendek yang paling meyakinkan dari project ini */
   highlights: { value: string; label: string }[];

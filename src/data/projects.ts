@@ -1,4 +1,4 @@
-import type { Project, ProjectCategory } from "../types";
+import type { Project } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
    PROJECTS
@@ -21,7 +21,6 @@ export const projects: Project[] = [
     title: "Market Research Terminal & Quantitative Data Engine",
     summary:
       "A complete capital market research ecosystem in Python: automated data pipelines, a data validation library, and desktop applications for analysing market and broker activity.",
-    categories: ["Hybrid", "Capital Market", "Data"],
     tech: ["Python", "Standard Library Only", "Tkinter", "unittest", "Selenium"],
     highlights: [
       { value: "20 yr", label: "market history covered" },
@@ -29,7 +28,7 @@ export const projects: Project[] = [
       { value: "1,383", label: "automated tests passing" },
     ],
     image: "[ADD IMAGE]",
-    status: "Running, covered by automated tests",
+    status: "Desktop application. Runs locally against a private market data archive, so there is no public demo.",
     featured: true,
     links: [
       { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
@@ -42,14 +41,13 @@ export const projects: Project[] = [
     title: "Equity Terminal",
     summary:
       "A browser-based tool that turns raw financial statement data into a structured investment thesis, covering profitability, valuation, credit risk, and scenario analysis. It measures each company against its own history rather than fixed industry thresholds.",
-    categories: ["Finance", "Capital Market", "Programming"],
     tech: ["JavaScript", "Zero Dependencies", "Single-file Build"],
     highlights: [
       { value: "70+", label: "financial fields parsed" },
       { value: "0", label: "external dependencies" },
     ],
     image: "[ADD IMAGE]",
-    status: "Live in the browser",
+    status: "Runs entirely in the browser. Open it and paste your own data.",
     featured: true,
     links: [
       { label: "Open", href: "[ADD DEMO LINK]", icon: "external" },
@@ -63,14 +61,13 @@ export const projects: Project[] = [
     title: "TBAGSBOOK — Digital Reading Platform",
     summary:
       "A reading platform serving books and comics with a library, commenting, and a gamified rewards system. The security layer is built end to end: Google sign-in, mandatory two-factor authentication, server-side session control, and abuse rate limiting.",
-    categories: ["Programming", "Data"],
     tech: ["Node.js", "Express", "PostgreSQL", "OAuth 2.0", "TOTP", "Cloudinary"],
     highlights: [
       { value: "2FA", label: "required, not optional" },
       { value: "Live", label: "deployed and in use" },
     ],
     image: "[ADD IMAGE]",
-    status: "Deployed and running",
+    status: "Deployed and in use.",
     featured: true,
     links: [
       { label: "Open", href: "[ADD DEMO LINK]", icon: "external" },
@@ -84,25 +81,16 @@ export const projects: Project[] = [
     title: "ATLAS — AI Travel Concierge",
     summary:
       "A full-stack booking application with a database, payment flow, and AI-assisted natural language search. Pricing is always recomputed on the server, so the language model never becomes a source of numbers.",
-    categories: ["Programming", "Data"],
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Gemini API", "Tailwind CSS"],
     highlights: [
       { value: "11", label: "product documents written" },
       { value: "B2B", label: "reframed from B2C" },
     ],
     image: "[ADD IMAGE]",
-    status: "Prototype, runs locally",
+    status: "Prototype. Needs a PostgreSQL database, so it runs locally rather than on a public URL.",
     featured: true,
     links: [
       { label: "GitHub", href: "[ADD GITHUB LINK]", icon: "github" },
     ],
   },
 ];
-
-/* Penyaring di atas daftar. "All" selalu pertama; sisanya hanya
-   kategori yang benar-benar dipakai, supaya tidak ada tombol yang
-   ditekan lalu menghasilkan daftar kosong. */
-export const projectFilters: readonly ("All" | ProjectCategory)[] = [
-  "All",
-  ...(Array.from(new Set(projects.flatMap((p) => p.categories))) as ProjectCategory[]),
-] as const;

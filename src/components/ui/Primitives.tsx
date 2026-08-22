@@ -115,7 +115,7 @@ export function PlaceholderChip({ value, size = "md" }: { value: string; size?: 
   const sizeClass = size === "sm" ? "px-2 py-0.5 text-[11px]" : "px-2.5 py-1 text-xs";
   return (
     <span
-      title="Nilai ini belum diisi — edit file di src/data/"
+      title="Not filled in yet. Edit the matching file in src/data/"
       className={`inline-flex items-center gap-1.5 rounded-full border border-dashed border-line-2 font-mono uppercase tracking-wide text-muted ${sizeClass}`}
     >
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-muted/60" />

@@ -38,7 +38,7 @@ export function Contact() {
       id="contact"
       index="06"
       title="Contact"
-      lead="Terbuka untuk internship dan posisi entry level di bidang capital market, data, atau engineering."
+      lead="Open to internships and entry-level roles in capital markets, data, and engineering."
       tone="soft"
     >
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">
