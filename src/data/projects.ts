@@ -116,7 +116,7 @@ export const projects: Project[] = [
     status: "Deployed and in use.",
     featured: true,
     links: [
-      { label: "Open the site", href: "https://tbagsbook-production.up.railway.app/", icon: "external" },
+      { label: "Open the site", href: "https://tbagsbook.vercel.app/", icon: "external" },
       { label: "Source", href: "https://github.com/ustadshaquille-ux/tbagsbook", icon: "github" },
     ],
   },
