@@ -215,42 +215,38 @@ export const projectDetails: Record<string, DetailProyek> = {
     steps: [
       {
         title: "Every route leads here first",
-        body: "There is no page you can reach without signing in. Ask for the library, the comics list or the dashboard and the server sends you back to this screen. That is the security layer doing its job, and it is why the screenshots below stop at this door.",
+        body: "There is no page you can reach without signing in. Ask for the library, the comics list or the dashboard and the server sends you back to this screen. That is the security layer doing its job.",
         image: "/projects/tbagsbook-01-login.jpg",
       },
       {
         title: "Sign in with Google",
         body: "There is no manual registration and no password to steal. Sign-in goes through Google OAuth 2.0 only, so the platform never stores a credential it could lose.",
+        image: "/projects/tbagsbook-02-google.jpg",
       },
       {
         title: "Set up two-factor authentication",
         body: "Required, not optional. A QR code is generated for Google Authenticator or Authy, and from then on a six-digit code is needed on every new sign-in. Verification allows one step of clock drift either way, so a slightly wrong phone clock does not lock you out.",
-        terminal: {
-          command: "routes/auth.js — the actual verification",
-          output: `const verified = speakeasy.totp.verify({  secret,  encoding: 'base32',  token,  window: 1        // toleransi satu langkah waktu});`,
-        },
+        image: "/projects/tbagsbook-03-2fa.jpg",
       },
       {
         title: "The session is held on the server",
         body: "Session cookies are httpOnly so no script can read them, marked secure in production, and expire after seven days. Because the session lives in PostgreSQL rather than only in the cookie, any device can be signed out from the server side.",
-        terminal: {
-          command: "server.js — cookie settings",
-          output: `cookie: {  secure:   process.env.NODE_ENV === 'production',  httpOnly: true,                    // tidak bisa dibaca JavaScript  maxAge:   7 * 24 * 60 * 60 * 1000  // tujuh hari}`,
-        },
+        image: "/projects/tbagsbook-04-session.jpg",
       },
       {
         title: "Read, collect, and earn",
         body: "Past the door: browse books and comics, save them to a personal library, leave comments, and earn coins from reading activity that feed a light rewards system.",
+        image: "/projects/tbagsbook-05-library.jpg",
       },
       {
         title: "See where you are signed in",
         body: "The activity page lists every session with its IP, time and user agent. Any of them can be revoked, and one control signs out every device at once.",
+        image: "/projects/tbagsbook-06-activity.jpg",
       },
     ],
     limits: [
       "Failed sign-in attempts are rate limited per IP address, so a stolen email cannot be brute forced from one machine.",
       "Uploads go to Cloudinary rather than the application server, so the server never holds user files directly.",
-      "The screenshots stop at the login page on purpose. Showing more would mean publishing a real account's library, and that account is not mine to publish.",
     ],
   },
 
