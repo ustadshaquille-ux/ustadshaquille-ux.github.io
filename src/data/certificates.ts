@@ -15,7 +15,7 @@ export const certificates: Certificate[] = [
   {
     title: "Internship Certificate",
     issuer: "PT Tijari Total Solusi",
-    date: "1 December 2025 — 27 February 2026",
+    date: "19 March 2026 — 19 June 2026",
     image: "/certificates/tijari-internship.png",
     href: "/certificates/tijari-internship.png",
     description:

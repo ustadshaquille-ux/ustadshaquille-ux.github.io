@@ -10,7 +10,7 @@ const KIND_META: Record<
 > = {
   independent: { label: "Independent", icon: "spark", accent: "market" },
   internship: { label: "Internship", icon: "brief", accent: "tech" },
-  work: { label: "Work", icon: "brief", accent: "neutral" },
+  organization: { label: "Organization", icon: "brief", accent: "neutral" },
   education: { label: "Education", icon: "cap", accent: "neutral" },
 };
 

@@ -5,12 +5,6 @@ import type { ExperienceItem } from "../types";
    Urut dari yang paling baru, dan isinya sama persis dengan CV.
    Maksimal dua poin per entri, satu baris masing-masing — perekrut
    memindai, tidak membaca.
-
-   Catatan: data lama di berkas ini menulis "PT Tijari Total Solusi,
-   Des 2025 - Feb 2026". CV menulis "PT Tijari Teknologi Automasi,
-   Mar - Mei 2026". Yang dipakai adalah versi CV. Bila justru yang
-   lama yang benar, perbaiki di kedua tempat sekaligus supaya tidak
-   ada dua versi yang beredar.
    ══════════════════════════════════════════════════════════════════ */
 
 export const experience: ExperienceItem[] = [
@@ -28,8 +22,8 @@ export const experience: ExperienceItem[] = [
   },
   {
     role: "IT Consultant Intern",
-    org: "PT Tijari Teknologi Automasi",
-    period: "Mar 2026 — May 2026",
+    org: "PT Tijari Total Solusi",
+    period: "Mar 2026 — Jun 2026",
     location: "South Jakarta, Indonesia",
     kind: "internship",
     points: [
@@ -43,7 +37,7 @@ export const experience: ExperienceItem[] = [
     org: "Student Association of Informatics Engineering, Universitas Budi Luhur",
     period: "Aug 2024 — Aug 2025",
     location: "Jakarta, Indonesia",
-    kind: "work",
+    kind: "organization",
     points: [
       "Worked with the other divisions to document our programmes, keeping written and video records of what happened.",
       "Made learning videos and wrote articles for students, and designed the visuals for them in Canva.",
@@ -55,7 +49,7 @@ export const experience: ExperienceItem[] = [
     org: "PEMATIK — Informatics Engineering Student Week",
     period: "Mar 2025",
     location: "Jakarta, Indonesia",
-    kind: "work",
+    kind: "organization",
     points: [
       "Planned and ran the food for participants and committee across the whole event.",
       "Dealt with the vendors and timed distribution so meals landed between sessions instead of cutting into them.",

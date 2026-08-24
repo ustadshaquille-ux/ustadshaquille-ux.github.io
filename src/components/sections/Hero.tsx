@@ -31,8 +31,10 @@ export function Hero() {
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col px-5 pt-20 sm:px-8 sm:pt-24">
         {/* ── panggung: huruf raksasa + sosok ───────────────────── */}
         <div className="relative flex min-h-0 flex-1 items-end justify-center">
-          {/* lapisan 1 — nama raksasa, di belakang */}
-          <Reveal className="pointer-events-none absolute inset-x-0 top-0 flex justify-center">
+          {/* lapisan 1 — nama raksasa, di belakang. Digeser sedikit ke
+              atas (-top negatif) supaya ada jarak napas sebelum foto
+              menimpanya, alih-alih langsung dempet di tepi atas. */}
+          <Reveal className="pointer-events-none absolute inset-x-0 -top-4 flex justify-center sm:-top-8">
             <span className="poster-type" aria-hidden>
               {POSTER_WORD}
             </span>
