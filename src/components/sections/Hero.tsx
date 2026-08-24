@@ -34,7 +34,7 @@ export function Hero() {
           {/* lapisan 1 — nama raksasa, di belakang. Digeser sedikit ke
               atas (-top negatif) supaya ada jarak napas sebelum foto
               menimpanya, alih-alih langsung dempet di tepi atas. */}
-          <Reveal className="pointer-events-none absolute inset-x-0 -top-4 flex justify-center sm:-top-8">
+          <Reveal className="pointer-events-none absolute inset-x-0 -top-10 flex justify-center sm:-top-16">
             <span className="poster-type" aria-hidden>
               {POSTER_WORD}
             </span>
@@ -76,18 +76,6 @@ export function Hero() {
           </p>
         </Reveal>
 
-        {/* ── baris kaki: jabatan · pemisah · nama panggilan ─────── */}
-        <Reveal delay={380}>
-          <div className="mt-6 flex items-center justify-between gap-4 pb-5 font-mono text-[10.5px] uppercase tracking-[0.18em] text-muted sm:mt-7">
-            <span>{profile.title}</span>
-            <span className="hidden items-center gap-2 text-tech sm:flex" aria-hidden>
-              <Icon name="spark" size={11} />
-              <Icon name="spark" size={11} />
-              <Icon name="spark" size={11} />
-            </span>
-            <span>{profile.handle}</span>
-          </div>
-        </Reveal>
       </div>
 
       {/* ── strip kalimat: dipaku di kaki layar pertama ──────────── */}
