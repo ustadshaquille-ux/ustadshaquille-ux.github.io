@@ -25,6 +25,7 @@ export const technicalSkills: SkillGroup[] = [
       "REST & API integration",
       "Authentication & session security",
       "Automated testing",
+      "Geospatial data visualisation",
     ],
   },
   {
@@ -37,6 +38,7 @@ export const technicalSkills: SkillGroup[] = [
       "Data leakage prevention",
       "Incremental loading & gap recovery",
       "Web scraping & browser automation",
+      "Rule-based text classification & entity extraction",
       "PostgreSQL & schema design",
       "Caching & performance optimisation",
     ],
@@ -51,6 +53,7 @@ export const technicalSkills: SkillGroup[] = [
       "Statistical significance testing",
       "Multiple-comparison correction",
       "Outlier detection",
+      "Event-study & anomaly detection",
       "Backtesting with realistic costs",
       "Out-of-sample & point-in-time validation",
     ],

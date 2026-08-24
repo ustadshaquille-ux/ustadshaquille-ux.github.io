@@ -87,6 +87,85 @@ export const projectDetails: Record<string, DetailProyek> = {
     ],
   },
 
+  "macro-divergence-terminal": {
+    overview: [
+      "Putting IHSG (~6,500) and the Nikkei (~66,000) on one price axis is a visual lie, and picking which foreign markets even matter is usually a guess dressed up as intuition. This site measures it instead: every candidate index is correlation-tested against IHSG daily returns over three years, rebased to 100, and the ones that actually move together are the ones on the chart.",
+      "The measurement turned up a result that runs against the usual assumption — ASEAN and Asian neighbours track IHSG more closely than Wall Street does, and China, despite being the largest trading partner, tracks it the least. The site is built around that finding: a divergence panel with two references (regional median and S&P 500) surfaces the days IHSG breaks from the pack, which is exactly where local news becomes the explanation worth reading.",
+    ],
+    builtFor:
+      "My own reading of what moved IHSG on a given day, without re-deriving the correlation numbers or the news-to-session mapping by hand every time.",
+    steps: [
+      {
+        title: "Rebase, not overlay",
+        body: "All seven indices start at 100 on the same date, so the chart answers 'who outperformed whom' instead of showing seven lines at unrelated scales. Each index can be toggled from the toolbar.",
+        image: "/projects/macro-divergence-terminal.jpg",
+      },
+      {
+        title: "Read the divergence panel",
+        body: "The default view is IHSG minus the median of Nikkei/SET/KOSPI/STI on the same session — median, not mean, so one index having a bad data day doesn't drag the reference down. A second view compares against the S&P 500's prior session instead, because global risk appetite and regional movement often disagree by a wide margin.",
+      },
+      {
+        title: "News is pinned to the session it could move",
+        body: "An article published at 19:00 on a Tuesday didn't move Tuesday's candle — it moved Wednesday's. Weekend news attaches to Monday. Anything published after the cutoff carries an 'after hours' tag rather than being silently reattributed.",
+      },
+      {
+        title: "Macro and micro are separated on purpose",
+        body: "Every article is tagged with a category (what it's about) and a scale (how wide it reaches). Five dividend announcements can't bury a central bank rate decision, because company news is deliberately excluded from competing for the day's headline slot — it gets its own panel, grouped by ticker.",
+      },
+      {
+        title: "The impact map shows where the pressure is coming from",
+        body: "Each article is tagged with the region its headline names, and the map lights up regions that are talking about Indonesia more than their own baseline — a z-score against each region's own recent median, not raw article counts, because raw counts would just show Indonesia lit up every single day.",
+      },
+      {
+        title: "Keyboard-first navigation",
+        body: "Arrow keys move by day, shift+arrow jumps to the next significant day, and a command bar takes a date, a keyword, or a ticker — searching by ticker is instant because it reads a precomputed daily index rather than opening the month's full news file.",
+      },
+    ],
+    limits: [
+      "It's a static site with no language model in the loop — every number in the summary panel (tone, dominant theme, corroboration) is traced back to the headlines that produced it, and can be recomputed by rerunning the same rule.",
+      "The event-study panel only opens once the archive covers at least 120 news-bearing sessions; below that, whatever comes out is noise dressed as a finding.",
+      "News backfill is still in progress. Prices go back to 2006; the news archive is being extended toward two years through scheduled runs rather than in one pass.",
+    ],
+  },
+
+  "live-order-flow-terminal": {
+    overview: [
+      "Running trade on Stockbit disappears the moment it scrolls off screen, and the stock you didn't happen to be watching today is the one you'll want to study tomorrow. This application scrapes the live tape for 500+ stocks in the background and writes every single row to disk every three seconds — watched or not.",
+      "What you actually look at is a footprint panel: one candle per column, buy volume growing right, sell volume growing left, neither side netted against the other so a busy price level with equal buying and selling doesn't cancel out to a misleading zero.",
+    ],
+    builtFor:
+      "My own intraday reading of order flow, where the cost of not recording a stock today is that it's gone for good.",
+    steps: [
+      {
+        title: "Everything is recorded, only the watchlist is shown",
+        body: "The scraper runs in the background against all 500+ stocks crossing the tape. Typing a ticker into the watchlist adds it to the panel view — it doesn't change what gets recorded, which was already happening for every stock.",
+        image: "/projects/live-order-flow-terminal.jpg",
+      },
+      {
+        title: "Read the footprint",
+        body: "The candle stands in the middle of its column; volume bars grow outward — sells to the left in red, buys to the right in green. A thin yellow line marks the point of control: the price with the most volume traded in that candle.",
+      },
+      {
+        title: "Switch what the bar length measures",
+        body: "Volume (total lots), frequency (trade count), lots-per-trade (average ticket size), or rupiah-per-trade — only one at a time, because two different metrics can't share one bar length without one of them lying.",
+      },
+      {
+        title: "Check history for a day you weren't watching live",
+        body: "The history tab reads back from the recorded ticks, ranked by how complete the day's capture was, so a stock that only occurred to you the next morning is still there to study.",
+        image: "/projects/live-order-flow-terminal-02-history.jpg",
+      },
+      {
+        title: "Get pinged instead of watching the screen",
+        body: "Trigger detection runs across the full 500+ stock background scan and pushes alerts to Telegram, so the screen doesn't have to be the thing catching the move.",
+      },
+    ],
+    limits: [
+      "It scrapes an authenticated data source (Stockbit), so there's no public demo — screenshots come from my own session.",
+      "What's captured is whatever the page actually renders. If the source page is filtered, the recording is filtered too; the tool doesn't invent rows the page never sent.",
+      "It's a Chrome-driven scraper, not an official API integration, so a Stockbit page redesign can break it until the selectors are updated.",
+    ],
+  },
+
   "market-research-terminal": {
     overview: [
       "Indonesian market data arrives in pieces: daily broker summaries, OHLCV files per stock, and running trade ticks, none of which agree on format and none of which come with any guarantee that they are complete.",
