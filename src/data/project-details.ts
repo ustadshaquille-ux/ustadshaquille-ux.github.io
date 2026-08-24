@@ -181,10 +181,7 @@ export const projectDetails: Record<string, DetailProyek> = {
       {
         title: "Let the validators run",
         body: "Before any figure is used, six validators check the schema, look for anomalies, cross-check independent sources against each other, and score the quality of the day's file. Anything that fails is reported with a code, a severity, and the row it came from.",
-        terminal: {
-          command: "python run_phase1.py --selftest",
-          output: `Ran 176 tests in 0.269s======================================================  RINGKASAN======================================================  Test dijalankan : 176  Gagal           : 0  Error           : 0  Dilewati        : 0  SEMUA CRITICAL TEST LULUS. Phase 1 boleh dianggap selesai.`,
-        },
+        image: "/projects/market-terminal-04-validators.jpg",
       },
       {
         title: "Analyse one stock",
@@ -199,10 +196,7 @@ export const projectDetails: Record<string, DetailProyek> = {
       {
         title: "Run the tests before trusting anything",
         body: "1,383 automated tests must pass before a change counts as finished, including UI tests that run headless against a hand-written Tkinter stub.",
-        terminal: {
-          command: "python run_tests.py",
-          output: `  APLIKASI ANALISA (saham_analyst)               331 test  LULUS  BLUMBERG TERMINAL (footprint & makro sektor)   876 test  LULUS  QUANT ENGINE PHASE 1 (data & validation)       176 test  LULUS  TOTAL                                         1383 test  SEMUA LULUS`,
-        },
+        image: "/projects/market-terminal-05-tests.jpg",
       },
     ],
     limits: [
