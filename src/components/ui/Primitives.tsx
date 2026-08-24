@@ -55,7 +55,6 @@ export function Section({ id, index, title, lead, children, tone = "plain" }: Se
 
         <div className="kaki-bagian">
           <span>Muhammad Shaquille Muttaqi</span>
-          <span>ustadshaquille-ux.github.io</span>
         </div>
       </div>
     </section>

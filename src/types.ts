@@ -73,7 +73,7 @@ export interface ExperienceItem {
   /** mis. "Des 2025 — Feb 2026" atau "[ADD PERIOD]" */
   period: Maybe;
   location?: Maybe;
-  kind: "organization" | "internship" | "education" | "independent";
+  kind: "organization" | "internship" | "freelance" | "education";
   /** maksimal 3-4 poin, masing-masing 1 baris */
   points: string[];
   tags?: string[];

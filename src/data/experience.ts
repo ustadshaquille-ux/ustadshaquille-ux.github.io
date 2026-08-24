@@ -21,11 +21,11 @@ export const experience: ExperienceItem[] = [
     tags: ["IT Support", "Networking", "Server Maintenance", "Hardware"],
   },
   {
-    role: "IT Consultant Intern",
+    role: "Freelance IT Consultant",
     org: "PT Tijari Total Solusi",
     period: "Mar 2026 — Jun 2026",
     location: "South Jakarta, Indonesia",
-    kind: "internship",
+    kind: "freelance",
     points: [
       "Worked on internal digital systems, from the early concept stage through to building out features.",
       "Helped put those solutions in place for the business and operations side.",

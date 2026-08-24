@@ -8,8 +8,8 @@ const KIND_META: Record<
   ExperienceItem["kind"],
   { label: string; icon: Parameters<typeof Icon>[0]["name"]; accent: "tech" | "market" | "neutral" }
 > = {
-  independent: { label: "Independent", icon: "spark", accent: "market" },
   internship: { label: "Internship", icon: "brief", accent: "tech" },
+  freelance: { label: "Freelance", icon: "spark", accent: "market" },
   organization: { label: "Organization", icon: "brief", accent: "neutral" },
   education: { label: "Education", icon: "cap", accent: "neutral" },
 };
