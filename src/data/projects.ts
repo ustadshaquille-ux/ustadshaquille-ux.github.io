@@ -133,9 +133,10 @@ export const projects: Project[] = [
       { value: "B2B", label: "reframed from B2C" },
     ],
     image: "/projects/atlas-concierge.jpg",
-    status: "Prototype. Needs a PostgreSQL database, so it runs locally rather than on a public URL.",
+    status: "Deployed on Vercel with a live Postgres database. Prices and inventory are seeded, not a real supplier feed.",
     featured: true,
     links: [
+      { label: "Open the tool", href: "https://atlas-hotelinx.vercel.app", icon: "external" },
       { label: "Source", href: "https://github.com/ustadshaquille-ux/atlas-hotelinx", icon: "github" },
     ],
   },
