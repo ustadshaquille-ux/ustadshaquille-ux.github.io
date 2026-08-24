@@ -177,7 +177,6 @@ export const projectDetails: Record<string, DetailProyek> = {
       {
         title: "Collect the data",
         body: "The collector downloads OHLCV through yfinance and scrapes broker summaries with Selenium. It detects missing dates, including today, and re-pulls anything that changed after a price adjustment.",
-        image: "/projects/market-terminal-02-collector.jpg",
       },
       {
         title: "Let the validators run",
