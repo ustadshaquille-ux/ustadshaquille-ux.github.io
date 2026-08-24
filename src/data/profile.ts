@@ -46,7 +46,7 @@ export const profile: Profile = {
   links: [
     { label: "Download CV", href: "/cv/CV-Shaquille-Capital-Market.pdf", icon: "download", primary: true },
     { label: "LinkedIn",    href: "[ADD LINKEDIN LINK]", icon: "linkedin", primary: true },
-    { label: "GitHub",      href: "[ADD GITHUB LINK]",   icon: "github",   primary: true },
+    { label: "GitHub",      href: "https://github.com/ustadshaquille-ux",   icon: "github",   primary: true },
     { label: "Email",       href: "mailto:m.shaquille.m@gmail.com", icon: "mail" },
   ],
 };

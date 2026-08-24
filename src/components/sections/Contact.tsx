@@ -46,12 +46,12 @@ export function Contact() {
           <div className="card relative overflow-hidden p-6 sm:p-8">
             <span className="rail-dual absolute inset-y-0 left-0 w-[3px]" aria-hidden />
             <p className="text-balance text-lg font-semibold leading-snug text-ink sm:text-xl">
-              Kalau tim Anda butuh orang yang paham pasarnya sekaligus bisa membangun alatnya —
-              mari bicara.
+              Kalau lu butuh orang yang paham pasarnya sekaligus bisa bikin alatnya —
+              tinggal kontak gue aja.
             </p>
             <p className="mt-4 text-[13px] leading-relaxed text-muted">
-              Cara tercepat: email. Saya biasanya balas di hari yang sama. Untuk melihat kode dan
-              dokumentasi tiap project, tautan repositori ada di kartu masing-masing.
+              Paling cepat lewat email, biasanya gue bales hari itu juga. Mau lihat kode dan
+              dokumentasi tiap project? Link repo-nya ada di kartu masing-masing.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {!isPlaceholder(profile.email) && (
