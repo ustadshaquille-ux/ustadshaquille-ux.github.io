@@ -20,29 +20,29 @@ import type { Project } from "../types";
 
 export const projects: Project[] = [
   {
-    id: "market-research-terminal",
-    kicker: "Capital Market Research",
-    period: "Jan 2026 — Present",
-    title: "Market Research Terminal & Quantitative Data Engine",
+    id: "atlas-concierge",
+    kicker: "AI Product",
+    period: "Jun 2026 — Aug 2026",
+    title: "ATLAS — AI Travel Concierge",
     summary:
-      "A complete capital market research ecosystem in Python: automated data pipelines, a data validation library, and desktop applications for analysing market and broker activity.",
-    tech: ["Python", "Standard Library Only", "Tkinter", "unittest", "Selenium"],
+      "A full-stack booking application with a database, payment flow, and AI-assisted natural language search. Pricing is always recomputed on the server, so the language model never becomes a source of numbers.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Gemini API", "Tailwind CSS"],
     highlights: [
-      { value: "20 yr", label: "market history covered" },
-      { value: "40s → 0.35s", label: "load time after caching" },
-      { value: "1,383", label: "automated tests passing" },
+      { value: "11", label: "product documents written" },
+      { value: "B2B", label: "reframed from B2C" },
     ],
-    image: "/projects/market-research-terminal.jpg",
-    status: "Desktop application. The code is public, but it runs against a private market data archive, so there is no live demo to click.",
+    image: "/projects/atlas-concierge.jpg",
+    status: "Deployed on Vercel with a live Postgres database. Prices and inventory are seeded, not a real supplier feed.",
     featured: true,
     links: [
-      { label: "Source", href: "https://github.com/ustadshaquille-ux/market-research-terminal", icon: "github" },
+      { label: "Open the tool", href: "https://atlas-hotelinx.vercel.app", icon: "external" },
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/atlas-hotelinx", icon: "github" },
     ],
   },
   {
     id: "macro-divergence-terminal",
     kicker: "Cross-Market Macro Research",
-    period: "Aug 2026 — Present",
+    period: "Feb 2026 — Present",
     title: "Macro Divergence Terminal",
     summary:
       "A static site that rebases IHSG against the regional and global indices actually correlated to it, and flags the days it decouples from the pack. News is attached to the trading session it could realistically move, not the date it was published, and the whole thing updates itself on a schedule without a server to maintain.",
@@ -61,29 +61,9 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "live-order-flow-terminal",
-    kicker: "Real-Time Market Microstructure",
-    period: "Jul 2026 — Present",
-    title: "Live Order Flow Terminal",
-    summary:
-      "A desktop application that scrapes running trade for 500+ stocks in the background and renders a live buy/sell footprint per price level for the ones you're watching. Every stock that crosses the tape is recorded to disk regardless of what's on screen, so a stock you weren't watching today can still be studied tomorrow.",
-    tech: ["Python", "Selenium", "Tkinter", "Telegram API", "Parquet"],
-    highlights: [
-      { value: "500+", label: "stocks recorded live, every tick, no gaps" },
-      { value: "193", label: "automated tests passing" },
-      { value: "3s", label: "capture interval, independent of what's displayed" },
-    ],
-    image: "/projects/live-order-flow-terminal.jpg",
-    status: "Desktop application. It scrapes a live, authenticated data source, so there is no public demo to click.",
-    featured: true,
-    links: [
-      { label: "Source", href: "https://github.com/ustadshaquille-ux/live-order-flow-terminal", icon: "github" },
-    ],
-  },
-  {
     id: "equity-terminal",
     kicker: "Fundamental Analysis",
-    period: "Jul 2026 — Aug 2026",
+    period: "Aug 2025 — Sep 2025",
     title: "Equity Terminal",
     summary:
       "A browser-based tool that turns raw financial statement data into a structured investment thesis, covering profitability, valuation, credit risk, and scenario analysis. It measures each company against its own history rather than fixed industry thresholds.",
@@ -103,7 +83,7 @@ export const projects: Project[] = [
   {
     id: "tbagsbook",
     kicker: "Full-Stack Platform",
-    period: "May 2026 — Jul 2026",
+    period: "Mar 2025 — Jun 2025",
     title: "TBAGSBOOK — Digital Reading Platform",
     summary:
       "A reading platform serving books and comics with a library, commenting, and a gamified rewards system. The security layer is built end to end: Google sign-in, mandatory two-factor authentication, server-side session control, and abuse rate limiting.",
@@ -121,23 +101,43 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "atlas-concierge",
-    kicker: "AI Product",
-    period: "Aug 2026",
-    title: "ATLAS — AI Travel Concierge",
+    id: "live-order-flow-terminal",
+    kicker: "Real-Time Market Microstructure",
+    period: "Nov 2024 — Present",
+    title: "Live Order Flow Terminal",
     summary:
-      "A full-stack booking application with a database, payment flow, and AI-assisted natural language search. Pricing is always recomputed on the server, so the language model never becomes a source of numbers.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Gemini API", "Tailwind CSS"],
+      "A desktop application that scrapes running trade for 500+ stocks in the background and renders a live buy/sell footprint per price level for the ones you're watching. Every stock that crosses the tape is recorded to disk regardless of what's on screen, so a stock you weren't watching today can still be studied tomorrow.",
+    tech: ["Python", "Selenium", "Tkinter", "Telegram API", "Parquet"],
     highlights: [
-      { value: "11", label: "product documents written" },
-      { value: "B2B", label: "reframed from B2C" },
+      { value: "500+", label: "stocks recorded live, every tick, no gaps" },
+      { value: "193", label: "automated tests passing" },
+      { value: "3s", label: "capture interval, independent of what's displayed" },
     ],
-    image: "/projects/atlas-concierge.jpg",
-    status: "Deployed on Vercel with a live Postgres database. Prices and inventory are seeded, not a real supplier feed.",
+    image: "/projects/live-order-flow-terminal.jpg",
+    status: "Desktop application. It scrapes a live, authenticated data source, so there is no public demo to click.",
     featured: true,
     links: [
-      { label: "Open the tool", href: "https://atlas-hotelinx.vercel.app", icon: "external" },
-      { label: "Source", href: "https://github.com/ustadshaquille-ux/atlas-hotelinx", icon: "github" },
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/live-order-flow-terminal", icon: "github" },
+    ],
+  },
+  {
+    id: "market-research-terminal",
+    kicker: "Capital Market Research",
+    period: "Feb 2024 — Present",
+    title: "Market Research Terminal & Quantitative Data Engine",
+    summary:
+      "A complete capital market research ecosystem in Python: automated data pipelines, a data validation library, and desktop applications for analysing market and broker activity.",
+    tech: ["Python", "Standard Library Only", "Tkinter", "unittest", "Selenium"],
+    highlights: [
+      { value: "20 yr", label: "market history covered" },
+      { value: "40s → 0.35s", label: "load time after caching" },
+      { value: "1,383", label: "automated tests passing" },
+    ],
+    image: "/projects/market-research-terminal.jpg",
+    status: "Desktop application. The code is public, but it runs against a private market data archive, so there is no live demo to click.",
+    featured: true,
+    links: [
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/market-research-terminal", icon: "github" },
     ],
   },
 ];
