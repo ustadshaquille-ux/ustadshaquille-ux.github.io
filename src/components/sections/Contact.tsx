@@ -16,7 +16,7 @@ export function Contact() {
       icon: "mail" as const,
     },
     {
-      label: "Telepon / WhatsApp",
+      label: "Phone / WhatsApp",
       value: profile.phone,
       href: isPlaceholder(profile.phone)
         ? profile.phone
@@ -38,7 +38,7 @@ export function Contact() {
       id="contact"
       index="06"
       title="Contact"
-      lead="Open to internships and entry-level roles in capital markets, data, and engineering."
+      lead="Open to roles and collaborations at the intersection of markets, data, and engineering."
       tone="soft"
     >
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">
@@ -46,12 +46,11 @@ export function Contact() {
           <div className="card relative overflow-hidden p-6 sm:p-8">
             <span className="rail-dual absolute inset-y-0 left-0 w-[3px]" aria-hidden />
             <p className="text-balance text-lg font-semibold leading-snug text-ink sm:text-xl">
-              Kalau lu butuh orang yang paham pasarnya sekaligus bisa bikin alatnya —
-              tinggal kontak gue aja.
+              If any of this looks interesting, I'd love to hear from you.
             </p>
             <p className="mt-4 text-[13px] leading-relaxed text-muted">
-              Paling cepat lewat email, biasanya gue bales hari itu juga. Mau lihat kode dan
-              dokumentasi tiap project? Link repo-nya ada di kartu masing-masing.
+              Email's fastest — I usually reply the same day. Curious about the code or
+              docs behind a project? The repo links are right on the cards below.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {!isPlaceholder(profile.email) && (
@@ -60,7 +59,7 @@ export function Contact() {
                   className="inline-flex items-center gap-2 rounded-lg bg-ink px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-85"
                 >
                   <Icon name="mail" size={16} />
-                  Kirim Email
+                  Send Email
                 </a>
               )}
               {!isPlaceholder(profile.cv) && (
@@ -130,7 +129,7 @@ export function Contact() {
               </span>
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-                  Lokasi
+                  Location
                 </p>
                 <p className="mt-1.5 text-sm text-ink">{profile.location}</p>
               </div>
