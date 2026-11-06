@@ -34,7 +34,7 @@ export function Hero() {
           {/* lapisan 1 — nama raksasa, di belakang. Digeser sedikit ke
               atas (-top negatif) supaya ada jarak napas sebelum foto
               menimpanya, alih-alih langsung dempet di tepi atas. */}
-          <Reveal className="pointer-events-none absolute inset-x-0 -top-10 flex justify-center sm:-top-16">
+          <Reveal className="pointer-events-none absolute inset-x-0 top-0 flex justify-center">
             <span className="poster-type" aria-hidden>
               {POSTER_WORD}
             </span>
@@ -79,7 +79,7 @@ export function Hero() {
       </div>
 
       {/* ── strip kalimat: dipaku di kaki layar pertama ──────────── */}
-      <Reveal delay={440} className="relative">
+      <div className="relative">
         <div className="marquee-wrap overflow-hidden border-y border-line bg-surface/40 backdrop-blur-sm">
           {/* mask ada di pembungkus yang DIAM; kalau ditempel di
               track yang bergerak, gradiennya ikut berjalan */}
@@ -108,7 +108,7 @@ export function Hero() {
             ))}
           </ul>
         </div>
-      </Reveal>
+      </div>
     </section>
   );
 }

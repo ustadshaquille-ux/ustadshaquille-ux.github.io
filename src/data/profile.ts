@@ -8,11 +8,11 @@ import type { Profile } from "../types";
    ══════════════════════════════════════════════════════════════════ */
 
 export const profile: Profile = {
-  eyebrow: "Programmer × Capital Market",
+  eyebrow: "Software · Data · AI · Capital Market",
   name: "Muhammad Shaquille Muttaqi",
-  title: "Capital Market Data & Analytics · Python",
+  title: "Software & Data Engineering · AI · Capital Market · IT Support",
   tagline:
-    "Menganalisa pasar modal Indonesia dengan cara membangun sendiri alat analisanya.",
+    "I build complete systems end to end — pipelines, engines, apps, and the AI on top — then put them to work.",
   location: "Jakarta, Indonesia",
 
   email: "m.shaquille.m@gmail.com",
@@ -36,16 +36,16 @@ export const profile: Profile = {
   handle: "@ustadshaquille",
 
   intro:
-    "I build my own route to a solution rather than waiting for one to " +
-    "exist, and I'm comfortable taking on work I've never touched before. " +
-    "I'll say I don't know when I don't know. I'm just not the type to " +
-    "say it twice.",
+    "I work across the lines that usually separate teams — software, data, " +
+    "AI, capital markets, and frontline IT support. I build my own route to " +
+    "a solution rather than waiting for one to exist, and I'm comfortable " +
+    "taking on work I've never touched before. I'll say I don't know when I " +
+    "don't know. I'm just not the type to say it twice.",
 
-  cv: "/cv/CV-Shaquille-Capital-Market.pdf",
+  cv: "/cv/CV-Shaquille-Muttaqi.pdf",
 
   links: [
-    { label: "Download CV", href: "/cv/CV-Shaquille-Capital-Market.pdf", icon: "download", primary: true },
-    { label: "LinkedIn",    href: "[ADD LINKEDIN LINK]", icon: "linkedin", primary: true },
+    { label: "Download CV", href: "/cv/CV-Shaquille-Muttaqi.pdf", icon: "download", primary: true },
     { label: "GitHub",      href: "https://github.com/ustadshaquille-ux",   icon: "github",   primary: true },
     { label: "Email",       href: "mailto:m.shaquille.m@gmail.com", icon: "mail" },
   ],
@@ -62,6 +62,7 @@ export const profile: Profile = {
 export const heroMarquee: string[] = [
   "Different route, same finish",
   "Builds the tool, then uses it",
+  "Works across the divisions",
   "Evidence before conclusion",
   "Says I don't know, only once",
   "Ships things people actually use",

@@ -3,6 +3,7 @@ import { projectDetails } from "../../data/project-details";
 import { Chip, LinkButton, Reveal } from "../ui/Primitives";
 import { Icon } from "../ui/Icon";
 import { isPlaceholder } from "../../lib/placeholder";
+import { TAUTAN_BERANDA_PROYEK } from "../../lib/router";
 
 /* ══════════════════════════════════════════════════════════════════
    PROJECT PAGE
@@ -31,7 +32,7 @@ export function ProjectPage({ id }: { id: string }) {
           <span className="pejal">Not found</span>
         </h1>
         <p className="text-ink-2">There is no project at this address.</p>
-        <LinkButton href="#/" label="Back to the portfolio" icon="external" variant="primary" />
+        <LinkButton href={TAUTAN_BERANDA_PROYEK} label="Back to the portfolio" icon="external" variant="primary" />
       </main>
     );
   }
@@ -43,7 +44,7 @@ export function ProjectPage({ id }: { id: string }) {
       {/* ── kembali ── */}
       <Reveal>
         <a
-          href="#/"
+          href={TAUTAN_BERANDA_PROYEK}
           className="mb-10 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition-colors hover:text-tech"
         >
           <span aria-hidden>&larr;</span> All projects
@@ -265,7 +266,7 @@ export function ProjectPage({ id }: { id: string }) {
       )}
 
       <div className="kaki-bagian">
-        <a href="#/" className="transition-colors hover:text-tech">
+        <a href={TAUTAN_BERANDA_PROYEK} className="transition-colors hover:text-tech">
           &larr; All projects
         </a>
         <span>Muhammad Shaquille Muttaqi</span>

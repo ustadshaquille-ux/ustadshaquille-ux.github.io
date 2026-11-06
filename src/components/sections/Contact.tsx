@@ -38,7 +38,7 @@ export function Contact() {
       id="contact"
       index="06"
       title="Contact"
-      lead="Open to roles and collaborations at the intersection of markets, data, and engineering."
+      lead="Open to roles and collaborations across software, data, AI, and capital markets."
       tone="soft"
     >
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">

@@ -2,20 +2,8 @@ import type { Project } from "../types";
 
 /* ══════════════════════════════════════════════════════════════════
    PROJECTS
-   Enam, sama persis dengan bagian Selected Projects di CV.
-
-   Sebelumnya berkas ini memuat sembilan entri, dan itu justru
-   melemahkan: sembilan judul membuat pembaca memindai sekilas lalu
-   tidak mengingat satu pun. Dipangkas ke empat, lalu dinaikkan lagi
-   ke enam saat dua proyek baru (Aug 2026) terbukti menunjukkan
-   kemampuan yang tidak ditunjukkan proyek manapun yang sudah ada:
-   geospatial visualisation, event-study statistics, dan live market
-   microstructure. Bukan pengecualian pada aturan "sedikit lebih
-   kuat" — tiap entri baru harus lolos tes yang sama seperti empat
-   yang lama.
-
-   Tautan sengaja dibiarkan "[ADD ...]" supaya dirender sebagai chip
-   putus-putus, bukan link rusak. Isi sendiri saat sudah siap.
+   Tiap entri harus menunjukkan kemampuan nyata yang belum diwakili entri
+   lain. Link yang belum ada dihilangkan, bukan diberi placeholder.
    ══════════════════════════════════════════════════════════════════ */
 
 export const projects: Project[] = [
@@ -38,6 +26,24 @@ export const projects: Project[] = [
       { label: "Open the tool", href: "https://atlas-hotelinx.vercel.app", icon: "external" },
       { label: "Source", href: "https://github.com/ustadshaquille-ux/atlas-hotelinx", icon: "github" },
     ],
+  },
+  {
+    id: "rundown-check",
+    kicker: "Broadcast Operations",
+    period: "Aug 2026",
+    title: "Rundown Check — Broadcast Schedule Validator",
+    summary:
+      "Built during the METRO TV internship. A desktop tool that imports a broadcast rundown CSV, auto-detects the column names whatever they are called, and flags overlaps, dead air, overruns, duration mismatches, missing media and not-ready status against a rule engine — then scores each rundown 0–100 and lets a new staff member fix rows in place until it reads ready to air.",
+    tech: ["Python", "Tkinter", "Rule Engine", "CSV", "Zero Dependencies"],
+    highlights: [
+      { value: "6", label: "conflict checks, red / amber severity" },
+      { value: "0–100", label: "readiness score per rundown" },
+      { value: "0", label: "external dependencies — plain Python" },
+    ],
+    image: "[ADD IMAGE]",
+    status: "Desktop tool. Runs offline on a plain Python install, no pip install needed.",
+    featured: true,
+    links: [],
   },
   {
     id: "macro-divergence-terminal",

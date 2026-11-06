@@ -29,12 +29,23 @@ export function useRute(): Rute {
   );
 
   useEffect(() => {
+    // Rute baru mulai dari atas; jangkar seperti #contact digulir ke bagiannya.
+    const gulir = () => {
+      const h = window.location.hash.replace(/^#/, "");
+      const jangkar = h && !h.startsWith("/") ? h : "";
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          const el = jangkar ? document.getElementById(jangkar) : null;
+          if (el) el.scrollIntoView();
+          else window.scrollTo({ top: 0, behavior: "instant" });
+        }),
+      );
+    };
     const ubah = () => {
       setRute(baca());
-      // Halaman baru selalu dimulai dari atas. Tanpa ini, membuka
-      // halaman proyek dari tengah beranda akan mendarat di tengah.
-      window.scrollTo(0, 0);
+      gulir();
     };
+    if (window.location.hash && !window.location.hash.startsWith("#/")) gulir();
     window.addEventListener("hashchange", ubah);
     return () => window.removeEventListener("hashchange", ubah);
   }, []);
@@ -48,4 +59,4 @@ export function tautanProyek(id: string): string {
 }
 
 /** Kembali ke beranda, langsung ke bagian proyek. */
-export const TAUTAN_BERANDA_PROYEK = "#/";
+export const TAUTAN_BERANDA_PROYEK = "#projects";

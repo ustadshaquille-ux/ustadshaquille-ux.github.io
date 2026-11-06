@@ -34,7 +34,7 @@ export default function App() {
   if (rute.nama === "proyek") {
     return (
       <>
-        <Navbar />
+        <Navbar key="proyek" />
         <ProjectPage id={rute.id} />
         <Footer />
       </>
@@ -43,7 +43,7 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar key="beranda" />
       <main>
         <Hero />
         <About />

@@ -27,7 +27,7 @@ export function Certificates() {
                 {hasImage ? (
                   <img
                     src={cert.image}
-                    alt={`Sertifikat ${cert.title} dari ${cert.issuer}`}
+                    alt={`${cert.title} from ${cert.issuer}`}
                     loading="lazy"
                     decoding="async"
                     className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"

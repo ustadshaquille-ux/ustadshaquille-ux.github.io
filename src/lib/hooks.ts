@@ -41,7 +41,7 @@ export function useRevealOnScroll(deps: unknown[] = []) {
 
 /** Section mana yang sedang dilihat — untuk highlight di navbar. */
 export function useActiveSection(ids: readonly string[]): string {
-  const [active, setActive] = useState<string>(ids[0] ?? "");
+  const [active, setActive] = useState<string>("");
 
   useEffect(() => {
     const sections = ids

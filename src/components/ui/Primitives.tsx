@@ -23,7 +23,7 @@ export function Section({ id, index, title, lead, children, tone = "plain" }: Se
   return (
     <section
       id={id}
-      className={`scroll-mt-24 border-t border-line ${tone === "soft" ? "bg-bg-soft" : ""}`}
+      className={`border-t border-line ${tone === "soft" ? "bg-bg-soft" : ""}`}
     >
       <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <header className="reveal mb-10 sm:mb-14">

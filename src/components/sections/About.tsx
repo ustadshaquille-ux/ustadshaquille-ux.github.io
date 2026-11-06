@@ -8,7 +8,7 @@ export function About() {
       id="about"
       index="01"
       title="About"
-      lead="What I analyse, and what I build to analyse it with."
+      lead="What I build, and where I put it to work."
     >
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14">
         {/* paragraf */}
@@ -22,7 +22,7 @@ export function About() {
           <Reveal delay={about.paragraphs.length * 70}>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3">
               <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                Bahasa
+                Languages
               </span>
               {languages.map((l) => (
                 <span key={l.name} className="text-sm text-ink-2">

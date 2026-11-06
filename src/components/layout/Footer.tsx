@@ -33,7 +33,7 @@ export function Footer() {
           ))}
           <a
             href="#top"
-            aria-label="Kembali ke atas"
+            aria-label="Back to top"
             className="ml-1 rounded-lg border border-line p-2 text-muted transition-colors hover:border-tech hover:text-tech"
           >
             <Icon name="arrow" size={16} className="-rotate-90" />

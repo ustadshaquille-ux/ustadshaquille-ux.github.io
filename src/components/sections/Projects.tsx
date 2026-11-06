@@ -113,7 +113,7 @@ export function Projects() {
       id="projects"
       index="03"
       title="Projects"
-      lead="Four things I designed, built, and tested myself."
+      lead="Things I designed, built, and tested myself — across software, AI, data, and operations."
     >
       <div>
         {projects.map((project, i) => (

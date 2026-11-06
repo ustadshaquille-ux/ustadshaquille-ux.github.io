@@ -29,4 +29,13 @@ export const certificates: Certificate[] = [
     description:
       "Completed a work internship as a student of Universitas Budi Luhur.",
   },
+  {
+    title: "Gemini Certified Student — University",
+    issuer: "Google for Education",
+    date: "Issued 16 July 2026 — Valid through 16 July 2029",
+    image: "/certificates/gemini-certified-student.png",
+    href: "/certificates/gemini-certified-student.png",
+    description:
+      "For having demonstrated the knowledge, skills, and basic competencies needed to use Google AI.",
+  },
 ];

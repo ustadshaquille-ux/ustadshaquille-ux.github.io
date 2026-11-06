@@ -40,7 +40,7 @@ export function Navbar() {
         href="#about"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-bg"
       >
-        Lompat ke konten
+        Skip to content
       </a>
 
       <header
@@ -49,7 +49,7 @@ export function Navbar() {
         }`}
       >
         <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-          <a href="#top" className="group flex items-center gap-2.5" aria-label="Kembali ke atas">
+          <a href="#top" className="group flex items-center gap-2.5" aria-label="Back to top">
             <span className="rail-dual h-7 w-[3px] rounded-full" />
             <span className="font-mono text-sm font-bold tracking-tight text-ink">{initials}</span>
             <span className="hidden text-sm text-muted sm:inline">/ portfolio</span>
@@ -84,7 +84,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
-              aria-label={open ? "Tutup menu" : "Buka menu"}
+              aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               className="rounded-lg border border-line-2 p-2 text-muted transition-colors hover:border-tech hover:text-tech md:hidden"
             >

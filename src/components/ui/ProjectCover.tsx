@@ -50,7 +50,7 @@ export function ProjectCover({ id, title, image, className = "" }: Props) {
     return (
       <img
         src={image}
-        alt={`Tangkapan layar project ${title}`}
+        alt={`Screenshot of ${title}`}
         loading="lazy"
         decoding="async"
         className={`h-full w-full object-cover ${className}`}
@@ -64,7 +64,7 @@ export function ProjectCover({ id, title, image, className = "" }: Props) {
         viewBox="0 0 400 200"
         preserveAspectRatio="none"
         role="img"
-        aria-label={`Sampul placeholder untuk project ${title}`}
+        aria-label={`Graphic cover for ${title}`}
         className="h-full w-full"
       >
         <rect width="400" height="200" fill="var(--c-surface-2)" />
@@ -138,9 +138,6 @@ export function ProjectCover({ id, title, image, className = "" }: Props) {
       {/* kabut supaya teks badge tetap terbaca */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface/85 via-transparent to-surface/40" />
 
-      <span className="pointer-events-none absolute bottom-2.5 right-3 rounded border border-dashed border-line-2 bg-surface/80 px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-widest text-muted backdrop-blur-sm">
-        ADD IMAGE
-      </span>
     </div>
   );
 }
