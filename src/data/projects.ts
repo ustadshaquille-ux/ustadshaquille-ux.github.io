@@ -28,6 +28,26 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "salve-co",
+    kicker: "Front-End & Brand Website",
+    period: "Nov 2026",
+    title: "SALVE.CO — Boxy Tee Drop Site",
+    summary:
+      "A hand-written website for a clothing label's three-tee drop, designed around the idea of an album tracklist. The label sells through WhatsApp, so every order button opens a chat with the product and chosen size already written, instead of a checkout it would not use.",
+    tech: ["HTML", "CSS", "Vanilla JS", "GitHub Pages", "Zero Dependencies"],
+    highlights: [
+      { value: "3", label: "products, set from one config file" },
+      { value: "0", label: "frameworks or build steps" },
+    ],
+    image: "/projects/salve-co.jpg",
+    status: "Live on GitHub Pages. There is no cart or online payment: price, stock and shipping are settled in chat.",
+    featured: true,
+    links: [
+      { label: "Open the site", href: "https://ustadshaquille-ux.github.io/salve-co/", icon: "external" },
+      { label: "Source", href: "https://github.com/ustadshaquille-ux/salve-co", icon: "github" },
+    ],
+  },
+  {
     id: "rundown-check",
     kicker: "Broadcast Operations",
     period: "Aug 2026",

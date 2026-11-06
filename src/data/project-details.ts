@@ -36,6 +36,44 @@ export interface DetailProyek {
 }
 
 export const projectDetails: Record<string, DetailProyek> = {
+  "salve-co": {
+    overview: [
+      "A small clothing label sells through WhatsApp and Instagram. A full online store would add a cart and a checkout that the way it actually sells does not use.",
+      "So the site does one job: make people want the shirt, then get them into the chat with the right product already named. The three tees are presented as tracks on an album, using the label's own campaign photos.",
+    ],
+    builtFor: "A clothing label that takes its orders through WhatsApp.",
+    steps: [
+      {
+        title: "Open on the drop",
+        body: "The first screen is the label's chrome logo and its three campaign posters, so the look is clear before anyone reads a word.",
+        image: "/projects/salve-co.jpg",
+      },
+      {
+        title: "Scroll through the photos",
+        body: "Full-width photos open the Album and Vintage Lavesh tracks. On a phone, Vintage Lavesh switches to a portrait photo instead of cropping the wide one.",
+        image: "/projects/salve-02-scene.jpg",
+      },
+      {
+        title: "See the shirt from each side",
+        body: "Each track switches between views of the shirt, such as front and back. Album and Vintage Lavesh also show it being worn.",
+        image: "/projects/salve-03-track.jpg",
+      },
+      {
+        title: "Order in one tap",
+        body: "The order button opens WhatsApp with the message already written, including the size if one is picked. While browsing the products, a small player bar shows the current track and keeps the order button on screen.",
+      },
+      {
+        title: "Browse the lookbook",
+        body: "The lookbook opens any photo at full size and ends with a link to the label's Instagram.",
+        image: "/projects/salve-04-lookbook.jpg",
+      },
+    ],
+    limits: [
+      "There is no cart, stock count or online payment. Those are handled in the chat, on purpose.",
+      "Prices and sizes are set in one small config file. Until they are filled in, the page says the price is available via chat and hides the size buttons.",
+    ],
+  },
+
   "equity-terminal": {
     overview: [
       "Reading a company's financials usually means copying numbers into a spreadsheet, rebuilding the same formulas every time, and hoping none of them drifted since the last company you looked at.",
