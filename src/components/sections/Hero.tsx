@@ -31,16 +31,16 @@ export function Hero() {
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col px-5 pt-20 sm:px-8 sm:pt-24">
         {/* ── panggung: huruf raksasa + sosok ───────────────────── */}
         <div className="relative flex min-h-0 flex-1 items-end justify-center">
-          {/* lapisan 1 — nama raksasa, di belakang. Digeser sedikit ke
-              atas (-top negatif) supaya ada jarak napas sebelum foto
-              menimpanya, alih-alih langsung dempet di tepi atas. */}
-          <Reveal className="pointer-events-none absolute inset-x-0 top-0 flex justify-center">
+          {/* Nama raksasa di DEPAN foto, seperti judul sampul majalah. Bagian
+              gelap foto dibuat transparan, jadi kalau huruf ada di belakang,
+              rambut yang menimpanya terlihat tergerus di laptop pendek. */}
+          <Reveal className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center">
             <span className="poster-type" aria-hidden>
               {POSTER_WORD}
             </span>
           </Reveal>
 
-          {/* lapisan 2 — sosok, menimpa huruf */}
+          {/* sosok, di belakang nama */}
           <Reveal delay={120} className="relative z-10 flex w-full justify-center">
             {cutoutReady ? (
               <img
@@ -48,12 +48,14 @@ export function Hero() {
                 alt={profile.photoAlt}
                 fetchPriority="high"
                 decoding="async"
-                className="cutout-shadow max-h-[44vh] w-auto object-contain sm:max-h-[50vh]"
+                width={962}
+                height={1034}
+                className="cutout-shadow h-auto max-h-[46svh] w-auto object-contain sm:max-h-[64vh]"
               />
             ) : (
               <div className="flex aspect-[3/4] w-44 max-w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-line-2 bg-surface/70 px-5 text-center text-muted backdrop-blur-sm sm:w-56">
                 <Icon name="spark" size={24} />
-                <span className="font-mono text-[11px] uppercase tracking-widest">
+                <span className="font-mono text-xs uppercase tracking-widest">
                   Foto latar transparan
                 </span>
               </div>
@@ -65,13 +67,13 @@ export function Hero() {
             delay={240}
             className="pointer-events-none absolute inset-x-0 bottom-0 z-20 flex justify-center"
           >
-            <span className="script-name">{profile.name}</span>
+            <h1 className="script-name">{profile.name}</h1>
           </Reveal>
         </div>
 
         {/* ── perkenalan ────────────────────────────────────────── */}
         <Reveal delay={320}>
-          <p className="mx-auto mt-6 max-w-2xl text-balance text-center text-[14.5px] italic leading-relaxed text-ink-2 sm:mt-7 sm:text-[15px]">
+          <p className="mx-auto mt-6 max-w-2xl text-balance text-center text-base leading-relaxed text-ink-2 sm:mt-7">
             {profile.intro}
           </p>
         </Reveal>
@@ -89,7 +91,7 @@ export function Hero() {
                 <div key={dup} className="flex shrink-0 items-center">
                   {heroMarquee.map((line) => (
                     <span key={`${dup}-${line}`} className="flex items-center whitespace-nowrap">
-                      <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-2">
+                      <span className="font-mono text-xs uppercase tracking-[0.18em] text-ink-2">
                         {line}
                       </span>
                       <span className="mx-7 text-tech" aria-hidden>

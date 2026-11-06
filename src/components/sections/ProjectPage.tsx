@@ -45,7 +45,7 @@ export function ProjectPage({ id }: { id: string }) {
       <Reveal>
         <a
           href={TAUTAN_BERANDA_PROYEK}
-          className="mb-10 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-muted transition-colors hover:text-tech"
+          className="mb-10 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-muted transition-colors hover:text-tech"
         >
           <span aria-hidden>&larr;</span> All projects
         </a>
@@ -55,10 +55,10 @@ export function ProjectPage({ id }: { id: string }) {
       <Reveal delay={60}>
         <header className="border-b border-line pb-10">
           <div className="mb-4 flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+            <span className="font-mono text-xs uppercase tracking-[0.16em] text-muted">
               {proyek.kicker}
             </span>
-            <span className="font-mono text-[10px] tracking-[0.14em] text-tech tnum">
+            <span className="font-mono text-xs tracking-[0.14em] text-tech tnum">
               {proyek.period}
             </span>
           </div>
@@ -102,7 +102,7 @@ export function ProjectPage({ id }: { id: string }) {
           {/* ── apa ini ── */}
           <Reveal delay={120}>
             <section className="border-b border-line py-12">
-              <h2 className="mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-tech">
+              <h2 className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-tech">
                 What it is
               </h2>
               <div className="grid gap-8 lg:grid-cols-[1.6fr_1fr]">
@@ -115,13 +115,13 @@ export function ProjectPage({ id }: { id: string }) {
                 </div>
                 <aside className="space-y-6">
                   <div>
-                    <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <p className="mb-1.5 font-mono text-xs uppercase tracking-[0.14em] text-muted">
                       Built for
                     </p>
-                    <p className="text-[14px] leading-relaxed text-ink-2">{detail.builtFor}</p>
+                    <p className="text-[15px] leading-relaxed text-ink-2">{detail.builtFor}</p>
                   </div>
                   <div>
-                    <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <p className="mb-2 font-mono text-xs uppercase tracking-[0.14em] text-muted">
                       Built with
                     </p>
                     <div className="flex flex-wrap gap-1.5">
@@ -135,7 +135,7 @@ export function ProjectPage({ id }: { id: string }) {
                       {proyek.highlights.map((h) => (
                         <div key={h.label}>
                           <dt className="font-mono text-base font-bold text-ink tnum">{h.value}</dt>
-                          <dd className="text-[11px] text-muted">{h.label}</dd>
+                          <dd className="text-xs text-muted">{h.label}</dd>
                         </div>
                       ))}
                     </dl>
@@ -148,7 +148,7 @@ export function ProjectPage({ id }: { id: string }) {
           {/* ── cara memakainya ── */}
           <section className="py-12">
             <Reveal>
-              <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.22em] text-tech">
+              <h2 className="mb-8 font-mono text-xs uppercase tracking-[0.16em] text-tech">
                 How to use it
               </h2>
             </Reveal>
@@ -167,7 +167,7 @@ export function ProjectPage({ id }: { id: string }) {
                       <h3 className="mb-2.5 text-lg font-semibold leading-snug text-ink">
                         {langkah.title}
                       </h3>
-                      <p className="max-w-prose text-[14.5px] leading-relaxed text-ink-2">
+                      <p className="max-w-prose text-base leading-relaxed text-ink-2">
                         {langkah.body}
                       </p>
                     </div>
@@ -179,7 +179,9 @@ export function ProjectPage({ id }: { id: string }) {
                           alt={`${proyek.title} — ${langkah.title}`}
                           loading="lazy"
                           decoding="async"
-                          className="w-full rounded-xl border border-line"
+                          width={1600}
+                          height={1000}
+                          className="h-auto w-full rounded-xl border border-line"
                         />
                       </figure>
                     ) : langkah.terminal ? (
@@ -192,11 +194,11 @@ export function ProjectPage({ id }: { id: string }) {
                             <span className="h-2 w-2 rounded-full bg-line-2" aria-hidden />
                             <span className="h-2 w-2 rounded-full bg-line-2" aria-hidden />
                             <span className="h-2 w-2 rounded-full bg-line-2" aria-hidden />
-                            <code className="ml-2 font-mono text-[11px] text-muted">
+                            <code className="ml-2 font-mono text-xs text-muted">
                               {langkah.terminal.command}
                             </code>
                           </div>
-                          <pre className="overflow-x-auto p-4 font-mono text-[11.5px] leading-relaxed text-ink-2">
+                          <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-ink-2">
                             {langkah.terminal.output}
                           </pre>
                         </div>
@@ -214,12 +216,12 @@ export function ProjectPage({ id }: { id: string }) {
           {detail.example && (
             <Reveal>
               <section className="border-t border-line py-12">
-                <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.22em] text-tech">
+                <h2 className="mb-6 font-mono text-xs uppercase tracking-[0.16em] text-tech">
                   A worked example
                 </h2>
                 <div className="grid gap-5 lg:grid-cols-2">
                   <div>
-                    <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <p className="mb-2 font-mono text-xs uppercase tracking-[0.14em] text-muted">
                       What goes in
                     </p>
                     <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-line bg-surface-2 p-4 font-mono text-[12px] leading-relaxed text-ink-2">
@@ -227,7 +229,7 @@ export function ProjectPage({ id }: { id: string }) {
                     </pre>
                   </div>
                   <div>
-                    <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                    <p className="mb-2 font-mono text-xs uppercase tracking-[0.14em] text-muted">
                       What comes out
                     </p>
                     <pre className="overflow-x-auto whitespace-pre-wrap rounded-lg border border-line bg-surface-2 p-4 font-mono text-[12px] leading-relaxed text-ink-2">
@@ -243,14 +245,14 @@ export function ProjectPage({ id }: { id: string }) {
           {detail.limits && detail.limits.length > 0 && (
             <Reveal>
               <section className="border-t border-line py-12">
-                <h2 className="mb-5 font-mono text-[11px] uppercase tracking-[0.22em] text-market">
+                <h2 className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-market">
                   What it does not do
                 </h2>
                 <ul className="space-y-3">
                   {detail.limits.map((batas) => (
                     <li
                       key={batas.slice(0, 24)}
-                      className="flex max-w-prose gap-3 text-[14px] leading-relaxed text-ink-2"
+                      className="flex max-w-prose gap-3 text-[15px] leading-relaxed text-ink-2"
                     >
                       <span className="mt-1.5 shrink-0 text-market" aria-hidden>
                         <Icon name="spark" size={11} />

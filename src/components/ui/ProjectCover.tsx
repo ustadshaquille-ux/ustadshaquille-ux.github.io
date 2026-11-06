@@ -53,6 +53,8 @@ export function ProjectCover({ id, title, image, className = "" }: Props) {
         alt={`Screenshot of ${title}`}
         loading="lazy"
         decoding="async"
+        width={1600}
+        height={1000}
         className={`h-full w-full object-cover ${className}`}
       />
     );

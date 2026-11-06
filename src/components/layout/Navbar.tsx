@@ -49,7 +49,7 @@ export function Navbar() {
         }`}
       >
         <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-          <a href="#top" className="group flex items-center gap-2.5" aria-label="Back to top">
+          <a href="#top" className="group flex min-h-11 min-w-11 items-center gap-2.5" aria-label="Back to top">
             <span className="rail-dual h-7 w-[3px] rounded-full" />
             <span className="font-mono text-sm font-bold tracking-tight text-ink">{initials}</span>
             <span className="hidden text-sm text-muted sm:inline">/ portfolio</span>
@@ -60,7 +60,7 @@ export function Navbar() {
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className={`rounded-md px-3 py-2 text-[13px] font-medium transition-colors ${
+                className={`inline-flex min-h-11 items-center rounded-md px-3 text-sm font-medium transition-colors ${
                   active === item.id ? "text-tech" : "text-muted hover:text-ink"
                 }`}
               >
@@ -74,7 +74,7 @@ export function Navbar() {
               <a
                 href={profile.cv}
                 download
-                className="hidden rounded-lg border border-line-2 px-3.5 py-2 text-[13px] font-medium text-ink-2 transition-colors hover:border-tech hover:text-tech sm:inline-flex sm:items-center sm:gap-2"
+                className="hidden min-h-11 rounded-lg border border-line-2 px-3.5 text-sm font-medium text-ink-2 transition-colors hover:border-tech hover:text-tech sm:inline-flex sm:items-center sm:gap-2"
               >
                 <Icon name="download" size={15} />
                 CV
@@ -86,7 +86,7 @@ export function Navbar() {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
-              className="rounded-lg border border-line-2 p-2 text-muted transition-colors hover:border-tech hover:text-tech md:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line-2 text-ink-2 transition-colors hover:border-tech hover:text-tech md:hidden"
             >
               <Icon name={open ? "close" : "menu"} size={16} />
             </button>

@@ -27,7 +27,7 @@ export function Section({ id, index, title, lead, children, tone = "plain" }: Se
     >
       <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
         <header className="reveal mb-10 sm:mb-14">
-          <div className="mb-4 flex items-center gap-3">
+          <div className="mb-7 flex items-center gap-3">
             <span className="font-mono text-xs tracking-[0.18em] text-tech tnum">{index}</span>
             <span className="h-px w-8 bg-line-2" />
           </div>
@@ -98,7 +98,7 @@ export function Chip({
       : accent === "market"
         ? "border-market/35 text-market bg-market/[0.07]"
         : "border-line-2 text-ink-2 bg-surface-2";
-  const sizeClass = size === "sm" ? "px-2 py-0.5 text-[11px]" : "px-2.5 py-1 text-xs";
+  const sizeClass = size === "sm" ? "px-2 py-0.5 text-xs" : "px-2.5 py-1 text-xs";
   return (
     <span
       className={`inline-flex items-center rounded-full border font-medium leading-none ${accentClass} ${sizeClass}`}
@@ -111,7 +111,7 @@ export function Chip({
 /* ── Chip untuk nilai yang belum diisi ─────────────────────────── */
 
 export function PlaceholderChip({ value, size = "md" }: { value: string; size?: "sm" | "md" }) {
-  const sizeClass = size === "sm" ? "px-2 py-0.5 text-[11px]" : "px-2.5 py-1 text-xs";
+  const sizeClass = size === "sm" ? "px-2 py-0.5 text-xs" : "px-2.5 py-1 text-xs";
   return (
     <span
       title="Not filled in yet. Edit the matching file in src/data/"
@@ -149,7 +149,7 @@ export function LinkButton({
 
   const base =
     "inline-flex items-center gap-2 rounded-lg font-medium transition-colors duration-200 whitespace-nowrap";
-  const sizeClass = size === "sm" ? "px-3 py-1.5 text-[13px]" : "px-4 py-2.5 text-sm";
+  const sizeClass = size === "sm" ? "min-h-11 px-3 text-sm" : "min-h-11 px-4 text-sm";
   const variantClass =
     variant === "primary"
       ? "bg-ink text-bg hover:bg-ink/85"
@@ -188,7 +188,7 @@ export function StatBlock({
       <div className={`font-mono text-lg font-bold leading-none tnum ${color} sm:text-xl`}>
         {value}
       </div>
-      <div className="mt-1.5 text-[11px] leading-tight text-muted">{label}</div>
+      <div className="mt-1.5 text-xs leading-tight text-muted">{label}</div>
     </div>
   );
 }

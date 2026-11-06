@@ -30,12 +30,14 @@ export function Certificates() {
                     alt={`${cert.title} from ${cert.issuer}`}
                     loading="lazy"
                     decoding="async"
+                    width={1200}
+                    height={900}
                     className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 ) : (
                   <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-muted">
                     <Icon name="award" size={24} />
-                    <span className="font-mono text-[10px] uppercase tracking-widest">
+                    <span className="font-mono text-xs uppercase tracking-widest">
                       ADD IMAGE
                     </span>
                   </div>
@@ -54,7 +56,7 @@ export function Certificates() {
                   <h3 className="text-[15px] font-semibold leading-snug text-ink">{cert.title}</h3>
                 )}
 
-                <p className="mt-1 text-[13px] text-ink-2">
+                <p className="mt-1 text-sm text-ink-2">
                   {isPlaceholder(cert.issuer) ? (
                     <PlaceholderChip value={cert.issuer} size="sm" />
                   ) : (
@@ -66,14 +68,14 @@ export function Certificates() {
                   {isPlaceholder(cert.date) ? (
                     <PlaceholderChip value={cert.date} size="sm" />
                   ) : (
-                    <span className="font-mono text-[11px] uppercase tracking-wide text-muted tnum">
+                    <span className="font-mono text-xs uppercase tracking-wide text-muted tnum">
                       {cert.date}
                     </span>
                   )}
                 </div>
 
                 {cert.description && !isPlaceholder(cert.description) && (
-                  <p className="mt-3 text-[13px] leading-relaxed text-muted">{cert.description}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{cert.description}</p>
                 )}
               </div>
             </div>

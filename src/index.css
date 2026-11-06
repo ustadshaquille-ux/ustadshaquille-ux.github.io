@@ -26,7 +26,7 @@
   --c-border-2:  #35353F;
   --c-text:      #EDEAE3;
   --c-text-2:    #B4AFA6;
-  --c-muted:     #7E7A72;
+  --c-muted:     #8C887F;
   --c-tech:      #C9A961;
   --c-market:    #7D9A85;
   --c-up:        #7FB894;
@@ -157,7 +157,7 @@
   position: relative;
   display: inline-block;
   font-family: var(--font-poster);
-  font-size: clamp(2.1rem, 6.5vw, 4.2rem);
+  font-size: clamp(2.6rem, 7.6vw, 5.5rem);
   line-height: 0.92;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -191,8 +191,8 @@
   padding-top: 1rem;
   border-top: 1px solid var(--c-border);
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.18em;
+  font-size: 12px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--c-muted);
 }
@@ -308,4 +308,39 @@
 @media print {
   .no-print { display: none !important; }
   body { background: #fff; color: #000; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   LAPISAN INTERAKSI
+   ══════════════════════════════════════════════════════════════════ */
+
+a, button { cursor: pointer; touch-action: manipulation; }
+
+.sampul { transition: border-color .25s ease, box-shadow .35s ease; }
+@media (hover: hover) {
+  .sampul:hover { box-shadow: 0 26px 60px -32px rgba(201, 169, 97, .45); }
+}
+
+/* Penanda posisi baca untuk halaman yang panjang. Tanpa skrip; browser yang
+   belum mendukungnya tidak menampilkan apa-apa. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 70;
+      height: 2px;
+      background: var(--c-tech);
+      transform-origin: 0 50%;
+      pointer-events: none;
+      animation: maju-baca linear both;
+      animation-timeline: scroll(root);
+    }
+    @keyframes maju-baca { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+}
+
+@media print {
+  body::after { display: none; }
 }

@@ -21,7 +21,7 @@ export function About() {
 
           <Reveal delay={about.paragraphs.length * 70}>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3">
-              <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+              <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                 Languages
               </span>
               {languages.map((l) => (
@@ -55,7 +55,7 @@ export function About() {
                   <Icon name={pillar.icon} size={17} />
                 </div>
                 <h3 className="mb-2 text-sm font-semibold text-ink">{pillar.title}</h3>
-                <p className="text-[13px] leading-relaxed text-muted">{pillar.body}</p>
+                <p className="text-sm leading-relaxed text-muted">{pillar.body}</p>
               </div>
             </Reveal>
           ))}

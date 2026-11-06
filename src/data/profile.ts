@@ -21,7 +21,7 @@ export const profile: Profile = {
   // Foto formal diambil dari CV. Ganti file di public/profile.png,
   // atau arahkan ke file lain di sini.
   photo: "/profile.png",
-  photoAlt: "Muhammad Shaquille Muttaqi berdiri mengenakan jas hitam",
+  photoAlt: "Muhammad Shaquille Muttaqi in a white shirt, on the phone in a dim room",
 
   // Foto hero: PNG dengan latar SUDAH DIHAPUS, supaya sosoknya
   // berdiri di depan tulisan raksasa. Simpan di public/, lalu ganti
@@ -31,7 +31,7 @@ export const profile: Profile = {
   // foto bercahaya samping: bagian gelapnya transparan, jadi huruf
   // raksasa di hero tembus dari baliknya. Ganti ke
   // "/shaquille-cutout.png" untuk versi jas hitam berdiri penuh.
-  photoCutout: "/shaquille-moody.png",
+  photoCutout: "/shaquille-moody.webp",
 
   handle: "@ustadshaquille",
 

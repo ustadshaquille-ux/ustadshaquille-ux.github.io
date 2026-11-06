@@ -21,15 +21,16 @@ function Baris({ project, index }: { project: Project; index: number }) {
   const nomor = String(index + 1).padStart(2, "0");
 
   return (
-    <Reveal delay={index * 60}>
+    <Reveal>
       <article className="grid items-center gap-7 border-t border-line py-10 lg:grid-cols-2 lg:gap-14 lg:py-14">
         {/* ── gambar ── */}
         <div className={kanan ? "lg:order-2" : ""}>
           <a
             href={tautanProyek(project.id)}
-            className="block overflow-hidden rounded-xl border border-line bg-surface-2 transition-colors hover:border-tech"
+            aria-label={`How ${project.title} works`}
+            className="sampul group block aspect-[16/10] overflow-hidden rounded-xl border border-line bg-surface-2 transition-colors hover:border-tech"
           >
-            <ProjectCover id={project.id} title={project.title} image={project.image} />
+            <ProjectCover id={project.id} title={project.title} image={project.image} className="object-top transition-transform duration-500 group-hover:scale-[1.025]" />
           </a>
         </div>
 
@@ -38,27 +39,27 @@ function Baris({ project, index }: { project: Project; index: number }) {
           <div className="mb-3 flex items-baseline gap-3">
             <span className="font-mono text-xs text-tech tnum">{nomor}</span>
             <span className="h-px flex-1 bg-line" />
-            <span className="font-mono text-[10px] tracking-[0.14em] text-muted tnum">
+            <span className="font-mono text-xs tracking-[0.14em] text-muted tnum">
               {project.period}
             </span>
           </div>
 
-          <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+          <p className="mb-1.5 font-mono text-xs uppercase tracking-[0.16em] text-muted">
             {project.kicker}
           </p>
 
-          <h3 className="mb-3 text-balance text-xl font-semibold leading-tight text-ink sm:text-2xl">
+          <h3 className="mb-3 text-balance font-poster text-3xl font-normal uppercase leading-[1.05] tracking-[0.01em] text-ink sm:text-4xl">
             <a href={tautanProyek(project.id)} className="transition-colors hover:text-tech">
               {project.title}
             </a>
           </h3>
 
-          <p className="mb-4 max-w-prose text-[14.5px] leading-relaxed text-ink-2">
+          <p className="mb-4 max-w-prose text-base leading-relaxed text-ink-2">
             {project.summary}
           </p>
 
           {project.status && (
-            <p className="mb-5 max-w-prose border-l-2 border-line-2 pl-3 text-[13px] leading-relaxed text-muted">
+            <p className="mb-5 max-w-prose border-l-2 border-line-2 pl-3 text-sm leading-relaxed text-muted">
               {project.status}
             </p>
           )}
@@ -67,8 +68,8 @@ function Baris({ project, index }: { project: Project; index: number }) {
             <dl className="mb-5 flex flex-wrap gap-x-8 gap-y-3">
               {project.highlights.map((h) => (
                 <div key={h.label}>
-                  <dt className="font-mono text-base font-bold text-ink tnum">{h.value}</dt>
-                  <dd className="text-[11px] text-muted">{h.label}</dd>
+                  <dt className="font-mono text-xl font-bold text-tech tnum">{h.value}</dt>
+                  <dd className="text-xs text-muted">{h.label}</dd>
                 </div>
               ))}
             </dl>

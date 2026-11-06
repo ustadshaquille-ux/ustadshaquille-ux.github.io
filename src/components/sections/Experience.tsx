@@ -58,7 +58,7 @@ export function Experience() {
                     {isPlaceholder(item.period) ? (
                       <PlaceholderChip value={item.period} size="sm" />
                     ) : (
-                      <span className="font-mono text-[11px] uppercase tracking-wide text-muted tnum">
+                      <span className="font-mono text-xs uppercase tracking-wide text-muted tnum">
                         {item.period}
                       </span>
                     )}
@@ -82,7 +82,7 @@ export function Experience() {
                         <PlaceholderChip value={point} size="sm" />
                       </li>
                     ) : (
-                      <li key={j} className="flex gap-2.5 text-[13px] leading-relaxed text-ink-2">
+                      <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-ink-2">
                         <span
                           className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-line-2"
                           aria-hidden

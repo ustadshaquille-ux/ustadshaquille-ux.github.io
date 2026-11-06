@@ -48,7 +48,7 @@ export function Contact() {
             <p className="text-balance text-lg font-semibold leading-snug text-ink sm:text-xl">
               If any of this looks interesting, I'd love to hear from you.
             </p>
-            <p className="mt-4 text-[13px] leading-relaxed text-muted">
+            <p className="mt-4 text-sm leading-relaxed text-muted">
               Email's fastest — I usually reply the same day. Curious about the code or
               docs behind a project? The repo links are right on the cards below.
             </p>
@@ -56,7 +56,7 @@ export function Contact() {
               {!isPlaceholder(profile.email) && (
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-flex items-center gap-2 rounded-lg bg-ink px-4 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-85"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-ink px-4 text-sm font-medium text-bg transition-opacity hover:opacity-85"
                 >
                   <Icon name="mail" size={16} />
                   Send Email
@@ -66,7 +66,7 @@ export function Contact() {
                 <a
                   href={profile.cv}
                   download
-                  className="inline-flex items-center gap-2 rounded-lg border border-line-2 px-4 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:border-tech hover:text-tech"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-line-2 px-4 text-sm font-medium text-ink-2 transition-colors hover:border-tech hover:text-tech"
                 >
                   <Icon name="download" size={16} />
                   Download CV
@@ -89,14 +89,14 @@ export function Contact() {
                   <Icon name={c.icon} size={16} />
                 </span>
                 <div className="min-w-0">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                     {c.label}
                   </p>
                   <div className="mt-1.5">
                     {empty ? (
                       <PlaceholderChip value={c.value} size="sm" />
                     ) : (
-                      <p className="truncate text-sm text-ink">{c.value}</p>
+                      <p className="text-sm text-ink [overflow-wrap:anywhere]">{c.value}</p>
                     )}
                   </div>
                 </div>
@@ -128,7 +128,7 @@ export function Contact() {
                 <Icon name="location" size={16} />
               </span>
               <div>
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+                <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                   Location
                 </p>
                 <p className="mt-1.5 text-sm text-ink">{profile.location}</p>
