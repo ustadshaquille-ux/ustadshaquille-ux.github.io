@@ -51,7 +51,7 @@ export function Contact() {
           </p>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-2">
             Email's fastest — I usually reply the same day. Curious about the code or
-            docs behind a project? The repo links are right on the cards below.
+            docs behind a project? The repo links are right on the cards above.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             {!isPlaceholder(profile.email) && (
