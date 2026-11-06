@@ -11,7 +11,7 @@ export function Certificates() {
       title="Certificates & Achievements"
       lead="Click to open the full-size document."
     >
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {certificates.map((cert, i) => {
           const hasImage = isFilled(cert.image);
           const hasLink = isFilled(cert.href);

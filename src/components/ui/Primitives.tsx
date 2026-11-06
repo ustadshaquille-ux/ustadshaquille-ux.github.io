@@ -16,21 +16,19 @@ interface SectionProps {
   title: string;
   lead?: string;
   children: ReactNode;
-  tone?: "plain" | "soft";
+  tone?: "plain" | "soft" | "gold";
 }
 
 export function Section({ id, index, title, lead, children, tone = "plain" }: SectionProps) {
   return (
     <section
       id={id}
-      className={`border-t border-line ${tone === "soft" ? "bg-bg-soft" : ""}`}
+      className={`relative overflow-hidden border-t border-line ${tone === "soft" ? "bg-bg-soft" : tone === "gold" ? "tone-emas" : ""}`}
     >
-      <div className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
-        <header className="reveal mb-10 sm:mb-14">
-          <div className="mb-7 flex items-center gap-3">
-            <span className="font-mono text-xs tracking-[0.18em] text-tech tnum">{index}</span>
-            <span className="h-px w-8 bg-line-2" />
-          </div>
+      <div className="mx-auto w-full max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
+        <header className="reveal relative mb-12 sm:mb-16">
+          {/* Nomor bagian dicetak raksasa dan bergaris luar. */}
+          <span className="nomor-bagian tnum">{index}</span>
 
           {/* Judul dicetak tiga kali: dua gema bergaris luar di belakang,
               satu pejal di depan. Hanya yang pejal dibaca pembaca layar. */}
@@ -98,7 +96,7 @@ export function Chip({
       : accent === "market"
         ? "border-market/35 text-market bg-market/[0.07]"
         : "border-line-2 text-ink-2 bg-surface-2";
-  const sizeClass = size === "sm" ? "px-2 py-0.5 text-xs" : "px-2.5 py-1 text-xs";
+  const sizeClass = size === "sm" ? "px-2.5 py-1 text-xs" : "px-3 py-1.5 text-[13px]";
   return (
     <span
       className={`inline-flex items-center rounded-full border font-medium leading-none ${accentClass} ${sizeClass}`}

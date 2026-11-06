@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-line">
-      <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-5 px-5 py-9 sm:flex-row sm:px-8">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-5 px-5 py-9 sm:flex-row sm:px-8">
         <div className="flex items-center gap-3">
           <span className="rail-dual h-6 w-[3px] rounded-full" aria-hidden />
           <p className="text-sm text-muted">

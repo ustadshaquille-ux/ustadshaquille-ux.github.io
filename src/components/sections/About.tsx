@@ -10,16 +10,24 @@ export function About() {
       title="About"
       lead="What I build, and where I put it to work."
     >
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14">
-        {/* paragraf */}
+      <div className="grid gap-12 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-20">
+        {/* paragraf: yang pertama jadi pembuka, sisanya bacaan */}
         <div className="space-y-5">
           {about.paragraphs.map((p, i) => (
-            <Reveal key={i} delay={i * 70}>
-              <p className="text-[15px] leading-relaxed text-ink-2 sm:text-base">{p}</p>
+            <Reveal key={i}>
+              <p
+                className={
+                  i === 0
+                    ? "text-balance text-2xl font-medium leading-snug text-ink sm:text-[1.75rem]"
+                    : "text-base leading-relaxed text-ink-2 sm:text-[17px]"
+                }
+              >
+                {p}
+              </p>
             </Reveal>
           ))}
 
-          <Reveal delay={about.paragraphs.length * 70}>
+          <Reveal>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-3">
               <span className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
                 Languages
@@ -35,28 +43,16 @@ export function About() {
         </div>
 
         {/* dua pilar */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-          {about.pillars.map((pillar, i) => (
-            <Reveal key={pillar.title} delay={140 + i * 90}>
-              <div className="card card-hover relative h-full overflow-hidden p-5">
-                <span
-                  className={`absolute inset-y-0 left-0 w-[3px] ${
-                    pillar.accent === "tech" ? "bg-tech" : "bg-market"
-                  }`}
-                  aria-hidden
-                />
-                <div
-                  className={`mb-3 inline-flex h-9 w-9 items-center justify-center rounded-lg border ${
-                    pillar.accent === "tech"
-                      ? "border-tech/30 bg-tech/10 text-tech"
-                      : "border-market/30 bg-market/10 text-market"
-                  }`}
-                >
-                  <Icon name={pillar.icon} size={17} />
-                </div>
-                <h3 className="mb-2 text-sm font-semibold text-ink">{pillar.title}</h3>
-                <p className="text-sm leading-relaxed text-muted">{pillar.body}</p>
-              </div>
+        <div>
+          {about.pillars.map((pillar) => (
+            <Reveal key={pillar.title} className="border-t border-line-2 py-7 first:pt-7">
+              <span className="text-tech">
+                <Icon name={pillar.icon} size={22} />
+              </span>
+              <h3 className="mb-2 mt-3 font-poster text-3xl font-normal uppercase leading-none tracking-[0.01em] text-ink">
+                {pillar.title}
+              </h3>
+              <p className="text-[15px] leading-relaxed text-ink-2">{pillar.body}</p>
             </Reveal>
           ))}
         </div>

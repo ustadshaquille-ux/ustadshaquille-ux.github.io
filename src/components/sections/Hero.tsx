@@ -31,11 +31,12 @@ export function Hero() {
       <div className="relative mx-auto flex w-full max-w-6xl flex-1 flex-col px-5 pt-20 sm:px-8 sm:pt-24">
         {/* ── panggung: huruf raksasa + sosok ───────────────────── */}
         <div className="relative flex min-h-0 flex-1 items-end justify-center">
+          <div className="hero-sorot pointer-events-none absolute inset-0" aria-hidden />
           {/* Nama raksasa di DEPAN foto, seperti judul sampul majalah. Bagian
               gelap foto dibuat transparan, jadi kalau huruf ada di belakang,
               rambut yang menimpanya terlihat tergerus di laptop pendek. */}
           <Reveal className="pointer-events-none absolute inset-x-0 top-0 z-20 flex justify-center">
-            <span className="poster-type" aria-hidden>
+            <span className="poster-type hero-nama" aria-hidden>
               {POSTER_WORD}
             </span>
           </Reveal>
@@ -50,7 +51,7 @@ export function Hero() {
                 decoding="async"
                 width={962}
                 height={1034}
-                className="cutout-shadow h-auto max-h-[46svh] w-auto object-contain sm:max-h-[64vh]"
+                className="hero-sosok cutout-shadow h-auto max-h-[46svh] w-auto object-contain sm:max-h-[64vh]"
               />
             ) : (
               <div className="flex aspect-[3/4] w-44 max-w-full flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-line-2 bg-surface/70 px-5 text-center text-muted backdrop-blur-sm sm:w-56">
@@ -82,19 +83,19 @@ export function Hero() {
 
       {/* ── strip kalimat: dipaku di kaki layar pertama ──────────── */}
       <div className="relative">
-        <div className="marquee-wrap overflow-hidden border-y border-line bg-surface/40 backdrop-blur-sm">
+        <div className="marquee-wrap overflow-hidden bg-tech">
           {/* mask ada di pembungkus yang DIAM; kalau ditempel di
               track yang bergerak, gradiennya ikut berjalan */}
           <div className="edge-fade overflow-hidden">
-            <div className="marquee-track py-3.5" aria-hidden="true">
+            <div className="marquee-track py-3" aria-hidden="true">
               {[0, 1].map((dup) => (
                 <div key={dup} className="flex shrink-0 items-center">
                   {heroMarquee.map((line) => (
                     <span key={`${dup}-${line}`} className="flex items-center whitespace-nowrap">
-                      <span className="font-mono text-xs uppercase tracking-[0.18em] text-ink-2">
+                      <span className="font-poster text-lg uppercase tracking-[0.06em] text-bg sm:text-xl">
                         {line}
                       </span>
-                      <span className="mx-7 text-tech" aria-hidden>
+                      <span className="mx-7 text-bg" aria-hidden>
                         <Icon name="spark" size={11} />
                       </span>
                     </span>

@@ -48,7 +48,7 @@ export function Navbar() {
           scrolled ? "border-b border-line bg-bg/85 backdrop-blur-xl" : "border-b border-transparent"
         }`}
       >
-        <nav className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
+        <nav className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-5 sm:px-8">
           <a href="#top" className="group flex min-h-11 min-w-11 items-center gap-2.5" aria-label="Back to top">
             <span className="rail-dual h-7 w-[3px] rounded-full" />
             <span className="font-mono text-sm font-bold tracking-tight text-ink">{initials}</span>

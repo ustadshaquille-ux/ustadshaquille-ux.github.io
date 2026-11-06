@@ -157,7 +157,7 @@
   position: relative;
   display: inline-block;
   font-family: var(--font-poster);
-  font-size: clamp(2.6rem, 7.6vw, 5.5rem);
+  font-size: clamp(3.4rem, 11.5vw, 9.5rem);
   line-height: 0.92;
   letter-spacing: -0.01em;
   text-transform: uppercase;
@@ -178,8 +178,8 @@
   user-select: none;
 }
 
-.judul-tumpuk .gema-1 { transform: translate(0.09em, -0.09em); opacity: 0.55; }
-.judul-tumpuk .gema-2 { transform: translate(0.18em, -0.18em); opacity: 0.25; }
+.judul-tumpuk .gema-1 { transform: translate(0.05em, -0.05em); opacity: 0.55; }
+.judul-tumpuk .gema-2 { transform: translate(0.1em, -0.1em); opacity: 0.25; }
 
 /* Baris kaki tiap bagian, meniru footer tetap pada tiap halaman
    presentasi: menandai bahwa satu bagian sudah selesai. */
@@ -343,4 +343,76 @@ a, button { cursor: pointer; touch-action: manipulation; }
 
 @media print {
   body::after { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   POSTER EDITORIAL
+   ══════════════════════════════════════════════════════════════════ */
+
+/* Nomor raksasa bergaris luar: hiasan yang tetap berisi informasi. */
+.nomor-bagian {
+  position: absolute;
+  right: 0;
+  top: -0.14em;
+  font-family: var(--font-poster);
+  font-size: clamp(4.75rem, 21vw, 17rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--c-tech);
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+}
+.nomor-proyek {
+  font-family: var(--font-poster);
+  font-size: clamp(3.75rem, 7vw, 5.5rem);
+  line-height: 0.9;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--c-tech);
+}
+
+/* Blok emas: semua warna datang dari variabel, jadi isinya ikut sendiri. */
+.tone-emas {
+  --c-bg:        #C9A961;
+  --c-bg-soft:   #C9A961;
+  --c-surface:   #BE9E56;
+  --c-surface-2: #B39349;
+  --c-border:    rgba(10, 10, 11, .28);
+  --c-border-2:  rgba(10, 10, 11, .5);
+  --c-text:      #0A0A0B;
+  --c-text-2:    #211C10;
+  --c-muted:     #352D1A;
+  --c-tech:      #0A0A0B;
+  --c-market:    #0A0A0B;
+  background: var(--c-bg);
+  color: var(--c-text);
+}
+.tone-emas ::selection { background: #0A0A0B; color: #C9A961; }
+
+/* Sorot hangat di belakang sosok, supaya foto punya kedalaman. */
+.hero-sorot {
+  background: radial-gradient(38% 52% at 50% 62%, rgba(201, 169, 97, .2), transparent 72%);
+}
+
+.baris-pengalaman { transition: background-color .25s ease; }
+.kontak-baris { transition: padding-left .25s cubic-bezier(.22, .61, .36, 1); }
+@media (hover: hover) {
+  .kontak-baris:hover { padding-left: .5rem; }
+}
+
+/* Nama naik sedikit lebih cepat dari sosok saat digulir. Hanya transform,
+   dan tidak aktif kalau pengguna meminta gerak dikurangi. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-nama, .hero-sosok {
+      animation-timing-function: linear;
+      animation-fill-mode: both;
+      animation-timeline: scroll(root);
+      animation-range: 0 100vh;
+    }
+    .hero-nama { display: inline-block; animation-name: nama-naik; }
+    .hero-sosok { animation-name: sosok-turun; }
+    @keyframes nama-naik { to { transform: translateY(-14vh); } }
+    @keyframes sosok-turun { to { transform: translateY(5vh); } }
+  }
 }

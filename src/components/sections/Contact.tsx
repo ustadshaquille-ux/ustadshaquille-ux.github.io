@@ -5,7 +5,10 @@ import { isPlaceholder } from "../../lib/placeholder";
 
 /* Baris kontak dibangun dari `profile` supaya tidak ada dua sumber
    kebenaran: ubah email/LinkedIn sekali di src/data/profile.ts,
-   hero, navbar, contact, dan footer ikut. */
+   hero, navbar, contact, dan footer ikut.
+
+   Satu-satunya blok emas penuh di halaman: bagian ini yang paling
+   ingin dicapai, jadi ia yang paling keras. */
 
 export function Contact() {
   const channels = [
@@ -39,78 +42,73 @@ export function Contact() {
       index="06"
       title="Contact"
       lead="Open to roles and collaborations across software, data, AI, and capital markets."
-      tone="soft"
+      tone="gold"
     >
-      <div className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:gap-10">
+      <div className="grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-20">
         <Reveal>
-          <div className="card relative overflow-hidden p-6 sm:p-8">
-            <span className="rail-dual absolute inset-y-0 left-0 w-[3px]" aria-hidden />
-            <p className="text-balance text-lg font-semibold leading-snug text-ink sm:text-xl">
-              If any of this looks interesting, I'd love to hear from you.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted">
-              Email's fastest — I usually reply the same day. Curious about the code or
-              docs behind a project? The repo links are right on the cards below.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {!isPlaceholder(profile.email) && (
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-ink px-4 text-sm font-medium text-bg transition-opacity hover:opacity-85"
-                >
-                  <Icon name="mail" size={16} />
-                  Send Email
-                </a>
-              )}
-              {!isPlaceholder(profile.cv) && (
-                <a
-                  href={profile.cv}
-                  download
-                  className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-line-2 px-4 text-sm font-medium text-ink-2 transition-colors hover:border-tech hover:text-tech"
-                >
-                  <Icon name="download" size={16} />
-                  Download CV
-                </a>
-              )}
-            </div>
+          <p className="text-balance font-poster text-[2.6rem] uppercase leading-[1.03] tracking-[0.01em] text-ink sm:text-6xl">
+            If any of this looks interesting, I'd love to hear from you.
+          </p>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-2">
+            Email's fastest — I usually reply the same day. Curious about the code or
+            docs behind a project? The repo links are right on the cards below.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            {!isPlaceholder(profile.email) && (
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex min-h-12 items-center gap-2 rounded-lg bg-ink px-5 text-[15px] font-semibold text-bg transition-opacity hover:opacity-85"
+              >
+                <Icon name="mail" size={17} />
+                Send Email
+              </a>
+            )}
+            {!isPlaceholder(profile.cv) && (
+              <a
+                href={profile.cv}
+                download
+                className="inline-flex min-h-12 items-center gap-2 rounded-lg border-2 border-ink px-5 text-[15px] font-semibold text-ink transition-colors hover:bg-ink hover:text-bg"
+              >
+                <Icon name="download" size={17} />
+                Download CV
+              </a>
+            )}
           </div>
         </Reveal>
 
-        <div className="grid gap-3 sm:grid-cols-2">
-          {channels.map((c, i) => {
+        <div className="border-b border-line-2 lg:self-start">
+          {channels.map((c) => {
             const empty = isPlaceholder(c.href);
             const body = (
-              <div
-                className={`card flex h-full items-start gap-3.5 p-4 ${
-                  empty ? "border-dashed" : "card-hover"
-                }`}
-              >
-                <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line-2 bg-surface-2 text-muted">
-                  <Icon name={c.icon} size={16} />
+              <>
+                <span className="mt-1 shrink-0 text-ink">
+                  <Icon name={c.icon} size={20} />
                 </span>
-                <div className="min-w-0">
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+                <span className="min-w-0">
+                  <span className="block font-mono text-xs uppercase tracking-[0.16em] text-muted">
                     {c.label}
-                  </p>
-                  <div className="mt-1.5">
-                    {empty ? (
+                  </span>
+                  {empty ? (
+                    <span className="mt-1.5 block">
                       <PlaceholderChip value={c.value} size="sm" />
-                    ) : (
-                      <p className="text-sm text-ink [overflow-wrap:anywhere]">{c.value}</p>
-                    )}
-                  </div>
-                </div>
-              </div>
+                    </span>
+                  ) : (
+                    <span className="mt-1 block text-lg font-semibold text-ink [overflow-wrap:anywhere]">
+                      {c.value}
+                    </span>
+                  )}
+                </span>
+              </>
             );
 
             return (
-              <Reveal key={c.label} delay={i * 60} className="h-full">
+              <Reveal key={c.label}>
                 {empty ? (
-                  body
+                  <div className="flex items-start gap-4 border-t border-line-2 py-5">{body}</div>
                 ) : (
                   <a
                     href={c.href}
-                    className="block h-full"
+                    className="kontak-baris flex items-start gap-4 border-t border-line-2 py-5"
                     {...(/^https?:/i.test(c.href)
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
@@ -122,17 +120,17 @@ export function Contact() {
             );
           })}
 
-          <Reveal delay={240} className="sm:col-span-2">
-            <div className="card flex items-center gap-3.5 p-4">
-              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-line-2 bg-surface-2 text-muted">
-                <Icon name="location" size={16} />
+          <Reveal>
+            <div className="flex items-start gap-4 border-t border-line-2 py-5">
+              <span className="mt-1 shrink-0 text-ink">
+                <Icon name="location" size={20} />
               </span>
-              <div>
-                <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted">
+              <span>
+                <span className="block font-mono text-xs uppercase tracking-[0.16em] text-muted">
                   Location
-                </p>
-                <p className="mt-1.5 text-sm text-ink">{profile.location}</p>
-              </div>
+                </span>
+                <span className="mt-1 block text-lg font-semibold text-ink">{profile.location}</span>
+              </span>
             </div>
           </Reveal>
         </div>
